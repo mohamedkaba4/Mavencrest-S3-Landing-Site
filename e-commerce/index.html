@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mohamed Kaba — Cloud & Security</title>
+<link rel="icon" type="image/svg+xml" href="mc web icon.svg">
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;500;800&family=Plus+Jakarta+Sans:wght@400;600&display=swap" rel="stylesheet">
+<style>
+:root {
+  --primary: #4facfe;
+  --secondary: #00f2fe;
+  --accent: #f093fb;
+  --bg-light: #f8faff;
+  --text-main: #2d3436;
+  --text-soft: #636e72;
+  --glass: rgba(255, 255, 255, 0.7);
+  --radius: 24px;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { 
+  font-family: 'Plus Jakarta Sans', sans-serif; 
+  background: var(--bg-light); 
+  color: var(--text-main);
+  overflow-x: hidden;
+}
+
+/* BUBBLY BACKGROUND */
+.bg-blobs {
+  position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index: -1;
+  background: radial-gradient(circle at 10% 20%, rgba(79, 172, 254, 0.15) 0%, transparent 40%),
+              radial-gradient(circle at 90% 80%, rgba(240, 147, 251, 0.15) 0%, transparent 40%);
+}
+
+/* FLOATING NAV */
+nav {
+  position: fixed; top: 20px; left: 50%; transform: translateX(-50%);
+  z-index: 1000; background: var(--glass);
+  backdrop-filter: blur(15px); padding: 10px 30px;
+  border-radius: 50px; border: 1px solid rgba(255,255,255,0.4);
+  box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+  display: flex; gap: 20px;
+}
+nav a {
+  text-decoration: none; color: var(--text-main); font-weight: 600;
+  font-size: 0.9rem; transition: 0.3s; padding: 8px 16px; border-radius: 20px;
+}
+nav a:hover, nav a.active { background: var(--primary); color: white; }
+
+/* HERO SECTION */
+.hero {
+  height: 100vh; display: flex; flex-direction: column; 
+  justify-content: center; align-items: center; text-align: center;
+  padding: 0 20px;
+}
+.hero h1 {
+  font-family: 'Outfit', sans-serif; font-size: clamp(3rem, 10vw, 6rem);
+  line-height: 1.1; margin-bottom: 20px; font-weight: 800;
+}
+.hero h1 span {
+  background: linear-gradient(to right, var(--primary), var(--secondary));
+  -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+}
+.hero p { font-size: 1.2rem; color: var(--text-soft); max-width: 600px; }
+
+/* CARDS & PANELS */
+.container { max-width: 1100px; margin: 0 auto; padding: 100px 20px; }
+.grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; }
+
+.card {
+  background: var(--glass); backdrop-filter: blur(10px);
+  padding: 40px; border-radius: var(--radius);
+  border: 1px solid rgba(255,255,255,0.8);
+  box-shadow: 0 15px 35px rgba(0,0,0,0.03);
+  transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+.card:hover { transform: translateY(-10px) scale(1.02); }
+
+.badge {
+  display: inline-block; padding: 6px 16px; border-radius: 50px;
+  background: white; font-size: 0.75rem; font-weight: 700;
+  color: var(--primary); margin: 5px; box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+}
+
+.section-title {
+  text-align: center; margin-bottom: 60px; font-family: 'Outfit';
+}
+
+/* BUTTONS */
+.btn {
+  display: inline-block; padding: 14px 30px; border-radius: 50px;
+  background: linear-gradient(135deg, var(--primary), var(--secondary));
+  color: white; text-decoration: none; font-weight: 700;
+  box-shadow: 0 10px 20px rgba(79, 172, 254, 0.3);
+  transition: 0.3s; margin-top: 20px;
+}
+.btn:hover { opacity: 0.9; transform: scale(1.05); }
+
+/* TAB SYSTEM */
+.panel { display: none; animation: fadeIn 0.5s forwards; }
+.panel.active { display: block; }
+@keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
+
+</style>
+</head>
+<body>
+
+<div class="bg-blobs"></div>
+
+<nav>
+  <a href="#" class="active" onclick="showTab('home', this)">Home</a>
+  <a href="#" onclick="showTab('projects', this)">Works</a>
+  <a href="#" onclick="showTab('contact', this)">Say Hello</a>
+</nav>
+
+<div class="container">
+  <!-- HOME -->
+  <div id="home" class="panel active">
+    <section class="hero">
+      <div class="badge">Cloud Engineer & Architect</div>
+      <h1>Cloud solutions,<br><span>Made Simple.</span></h1>
+      <p>I'm Mohamed Kaba. I build secure, scalable cloud habitats where applications can grow and thrive. 🚀</p>
+      <div style="margin-top: 30px;">
+        <span class="badge">AWS Solutions Architect</span>
+        <span class="badge">Azure Specialist</span>
+        <span class="badge">Security Enthusiast</span>
+      </div>
+    </section>
+
+    <h2 class="section-title">What I Do Best</h2>
+    <div class="grid">
+      <div class="card">
+        <h3>Cloud Architecture</h3>
+        <p style="margin-top: 15px; color: var(--text-soft);">Migrating over 50 applications to high-availability cloud environments with 99.97% uptime.</p>
+      </div>
+      <div class="card">
+        <h3>Security First</h3>
+        <p style="margin-top: 15px; color: var(--text-soft);">Implementing Zero-Trust frameworks and IAM automation to keep data safe and sound.</p>
+      </div>
+      <div class="card">
+        <h3>DevSecOps</h3>
+        <p style="margin-top: 15px; color: var(--text-soft);">Automating the boring stuff using Terraform, CI/CD, and custom PowerShell scripts.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- PROJECTS -->
+  <div id="projects" class="panel">
+    <h1 class="section-title">Cool Projects 🛠️</h1>
+    <div class="grid">
+      <div class="card">
+        <div class="badge">AWS / Terraform</div>
+        <h3>Landing Zone Automation</h3>
+        <p style="margin: 15px 0; color: var(--text-soft);">A multi-region AWS setup built for scale and security.</p>
+        <a href="#" class="btn">View Code</a>
+      </div>
+      <div class="card">
+        <div class="badge">Python / Security</div>
+        <h3>Cloud Cost Sentinel</h3>
+        <p style="margin: 15px 0; color: var(--text-soft);">A friendly bot that watches your AWS bill so you don't have to.</p>
+        <a href="#" class="btn">Learn More</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- CONTACT -->
+  <div id="contact" class="panel">
+    <div class="card" style="max-width: 600px; margin: 0 auto; text-align: center;">
+      <h1>Let's Chat! ✨</h1>
+      <p style="margin: 20px 0;">Looking for a cloud expert or just want to talk about the latest tech?</p>
+      <p><strong>Email:</strong> kabax4@gmail.com</p>
+      <div style="margin-top: 30px; display: flex; justify-content: center; gap: 10px;">
+        <a href="https://linkedin.com/in/mohamed-kaba-12bb34265/" target="_blank" class="badge">LinkedIn</a>
+        <a href="https://github.com/mohamedkaba4" target="_blank" class="badge">GitHub</a>
+      </div>
+      <a href="mailto:kabax4@gmail.com" class="btn">Send an Email</a>
+    </div>
+  </div>
+</div>
+
+<script>
+function showTab(tabId, el) {
+  document.querySelectorAll('.panel').forEach(p => p.classList.remove('active'));
+  document.querySelectorAll('nav a').forEach(a => a.classList.remove('active'));
+  
+  document.getElementById(tabId).classList.add('active');
+  el.classList.add('active');
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+</script>
+
+</body>
+</html>
