@@ -1,37 +1,43 @@
-# Mavencrest — Cloud Engineering Portfolio
+# Mavencrest Static Site
 
-Personal cloud engineering portfolio showcasing hands-on projects across AWS, Azure, Terraform, cloud architecture, DevOps, security, and Infrastructure as Code.
+Personal cloud and security engineering portfolio hosted on AWS using Amazon S3 and CloudFront.
 
-The site serves as a central hub for my projects, architecture designs, certifications, and technical experience.
+The site showcases cloud infrastructure, systems engineering, security, DevOps, and enterprise architecture projects using a liglhtweight static frontend that allows for fast and reliable global delivery.
 
-## Portfolio
+## Architecture
 
-The portfolio includes:
+```text
+User
+  |
+  v
+CloudFront
+  |
+  v
+Private Amazon S3 Bucket
+  |
+  +-- HTML
+  +-- CSS
+  +-- JavaScript
+  +-- Static Assets (images, media, etc)
 
-- Cloud engineering and architecture projects
-- AWS and Azure implementations
-- Architecture diagrams and project breakdowns
-- Infrastructure as Code projects
-- DevOps and automation work
-- Cloud security projects
-- Certifications and technical skills
+Amazon CloudFront serves the site publicly and handles caching, while the S3 bucket remains private and is only accessible through CloudFront.
 
-## Built With
-
-- HTML
-- CSS
-- JavaScript
+# Stack
+- HTML, CSS, JavaScript
 - Amazon S3
 - Amazon CloudFront
 - Route 53
+- AWS Certificate Manager
+- Origin Access Control (OAC)
 
-## Structure
+# Highlights
+- Secure static website hosting
+- Private S3 origin
+- CloudFront content delivery and caching
+- HTTPS with custom domain
+- Responsive portfolio design
+- Project and certification showcase
 
-```text
-Mavencrest/
-├── index.html
-├── assets/
-│   ├── favicon.svg
-│   └── project-images/
-├── .gitignore
-└── README.md
+# Purpose
+This project serves as the central portfolio for my cloud, infrastructure, security, and DevOps work while demonstrating a simple production-style static hosting architecture on AWS.
+

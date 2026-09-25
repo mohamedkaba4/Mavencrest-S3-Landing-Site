@@ -5,7 +5,21 @@
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
 <title>Mohamed Kaba — Cloud &amp; Security Engineer</title>
-<link href="assets/mc web icon.svg" rel="icon" type="image/svg+xml"/>
+<!-- Open Graph preview -->
+<meta property="og:type" content="website"/>
+<meta property="og:url" content="https://mavencrest.site/"/>
+<meta property="og:title" content="Mohamed Kaba — Cloud &amp; Security Engineer"/>
+<meta
+  property="og:description"
+  content="Cloud infrastructure, DevOps, and security projects across AWS, Azure, Terraform, automation, and enterprise systems."
+/>
+<meta
+  property="og:image"
+  content="https://mavencrest.site/assets/og-image.png"
+/>
+
+<link href="mc web icon.svg" rel="icon" type="image/svg+xml"/>
+<link href="mc web icon.svg" rel="icon" type="image/svg+xml"/>
 <link href="https://fonts.googleapis.com" rel="preconnect"/>
 <link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&amp;family=Syne:wght@400;700;800&amp;display=swap" rel="stylesheet"/>
 <style>
@@ -140,7 +154,7 @@ nav { position: fixed; top: 0; left: 0; right: 0; z-index: 200; height: 52px; di
 .traj-card:nth-child(2) { --card-accent: #a855f7; --card-glow: rgba(124,58,237,0.15); }
 .card-index { font-size: 0.6rem; color: var(--card-accent,var(--cyan)); letter-spacing: 0.25em; margin-bottom: 2.5rem; opacity: 0.8; position: relative; z-index: 1; }
 .card-title { font-family: var(--display); font-size: 1.9rem; font-weight: 700; color: var(--text); margin-bottom: 1.5rem; letter-spacing: -0.02em; position: relative; z-index: 1; line-height: 1.1; }
-.card-body { font-size: 0.78rem; color: var(--text-dim); line-height: 2; position: relative; z-index: 1; }
+.card-body { font-size: 0.78rem; color: var(--text); line-height: 2; position: relative; z-index: 1; }
 .card-tags { margin-top: 2.5rem; display: flex; flex-wrap: wrap; gap: 8px; position: relative; z-index: 1; }
 .card-tag { font-size: 0.55rem; letter-spacing: 0.15em; text-transform: uppercase; padding: 4px 10px; border: 1px solid rgba(0,255,231,0.15); color: var(--text-dim); transition: all 0.3s; }
 .traj-card:hover .card-tag { border-color: rgba(0,255,231,0.3); color: var(--text-mid); }
@@ -224,8 +238,8 @@ nav { position: fixed; top: 0; left: 0; right: 0; z-index: 200; height: 52px; di
 
 .pcard-cat { font-size: 0.55rem; letter-spacing: 0.25em; text-transform: uppercase; color: var(--pcard-color,var(--cyan)); margin-bottom: 1.2rem; display: flex; align-items: center; gap: 8px; opacity: 0.85; }
 .pcard-cat::before { content: ''; display: inline-block; width: 20px; height: 1px; background: var(--pcard-color,var(--cyan)); }
-.pcard-title { font-family: var(--display); font-size: 1.45rem; font-weight: 700; color: var(--text); letter-spacing: -0.02em; line-height: 1.2; margin-bottom: 1rem; position: relative; z-index: 1; }
-.pcard-desc { font-size: 0.72rem; color: var(--text-dim); line-height: 2; flex: 1; position: relative; z-index: 1; }
+.pcard-title { font-family: var(--display); font-size: 1.45rem; font-weight: 700; color: var(--text); letter-spacing: -0.02em; line-height: 1.2; margin-bottom: 1rem; position: relative; z-index: 1; min-height: 5.5rem; }
+.pcard-desc { font-size: 0.72rem; color: var(--text); line-height: 2; flex: none; min-height: 13rem; position: relative; z-index: 1; } 
 .pcard-stack { margin-top: 1.6rem; display: flex; flex-wrap: wrap; gap: 6px; position: relative; z-index: 1; }
 .stack-pill { font-size: 0.52rem; letter-spacing: 0.12em; text-transform: uppercase; padding: 3px 9px; border: 1px solid rgba(255,255,255,0.07); color: var(--text-dim); transition: all 0.3s; }
 
@@ -260,7 +274,7 @@ nav { position: fixed; top: 0; left: 0; right: 0; z-index: 200; height: 52px; di
   margin-bottom: 1.5rem; 
 }
 .contact-title em { font-style: normal; -webkit-text-stroke: 1.5px var(--cyan); color: transparent; }
-.contact-blurb { font-size: 0.75rem; color: var(--text-dim); line-height: 2.2; margin-bottom: 3rem; max-width: 400px; }
+.contact-blurb { font-size: 0.75rem; color: var(--text); line-height: 2.2; margin-bottom: 3rem; max-width: 400px; }
 .contact-links { display: flex; flex-direction: column; gap: 1px; }
 .contact-link { display: flex; align-items: center; gap: 1.2rem; padding: 1.2rem 1.5rem; background: var(--navy-mid); border: 1px solid rgba(0,255,231,0.06); text-decoration: none; transition: all 0.3s; position: relative; overflow: hidden; cursor: none; }
 .contact-link::before { content: ''; position: absolute; left: 0; top: 0; bottom: 0; width: 2px; background: var(--cyan); transform: scaleY(0); transition: transform 0.3s; transform-origin: bottom; }
@@ -270,7 +284,7 @@ nav { position: fixed; top: 0; left: 0; right: 0; z-index: 200; height: 52px; di
 .contact-link:hover .cl-icon { background: rgba(0,255,231,0.08); border-color: var(--cyan); }
 .cl-label { flex: 1; }
 .cl-label strong { display: block; font-size: 0.7rem; color: var(--text); letter-spacing: 0.1em; text-transform: uppercase; margin-bottom: 2px; }
-.cl-label span { font-size: 0.62rem; color: var(--text-dim); }
+.cl-label span { font-size: 0.62rem; color: var(--text); }
 .cl-arrow { font-size: 0.8rem; color: var(--text-dim); transition: all 0.3s; }
 .contact-link:hover .cl-arrow { color: var(--cyan); transform: translateX(4px); }
 
@@ -305,7 +319,7 @@ nav { position: fixed; top: 0; left: 0; right: 0; z-index: 200; height: 52px; di
 .project-detail-card { border: 1px solid var(--border); background: rgba(7,21,40,.86); padding: 2rem; }
 .project-detail-eyebrow { color: #a855f7; font-size: .6rem; letter-spacing: .22em; text-transform: uppercase; margin-bottom: 1.2rem; }
 .project-detail-title { font-family: var(--display); font-size: clamp(2rem,4vw,3.2rem); line-height: 1.05; margin-bottom: 1.4rem; }
-.project-detail-desc { color: var(--text-mid); font-size: .78rem; line-height: 2; }
+.project-detail-desc { color: var(--text); font-size: .78rem; line-height: 2; }
 .project-status { display: inline-block; margin-top: 1.4rem; padding: .35rem .7rem; border: 1px solid rgba(52,211,153,.3); color: #34d399; font-size: .56rem; letter-spacing: .14em; text-transform: uppercase; }
 .project-detail-stack { display:flex; flex-wrap:wrap; gap:.55rem; margin-top:1.5rem; }
 .project-detail-stack span { border:1px solid rgba(255,255,255,.1); padding:.42rem .65rem; color:var(--text-mid); font-size:.56rem; }
@@ -322,11 +336,11 @@ nav { position: fixed; top: 0; left: 0; right: 0; z-index: 200; height: 52px; di
 .resource-card:hover { transform:translateY(-3px); border-color:var(--cyan); }
 .resource-card small { display:block; color:var(--cyan); font-size:.56rem; letter-spacing:.15em; text-transform:uppercase; margin-bottom:.7rem; }
 .resource-card strong { display:block; color:var(--text); font-family:var(--display); font-size:1.05rem; margin-bottom:.5rem; }
-.resource-card span { color:var(--text-dim); font-size:.64rem; line-height:1.7; }
+.resource-card span { color:var(--text); font-size:.64rem; line-height:1.7; }
 .detail-notes { display:grid; grid-template-columns:repeat(3,1fr); gap:1rem; margin-top:1.4rem; }
 .detail-note { border:1px solid rgba(255,255,255,.07); background:rgba(7,21,40,.72); padding:1.4rem; }
 .detail-note h3 { font-family:var(--display); font-size:1rem; margin-bottom:.7rem; }
-.detail-note p { color:var(--text-dim); font-size:.66rem; line-height:1.8; }
+.detail-note p { color:var(--text); font-size:.66rem; line-height:1.8; }
 .nav-tab.project-tab { display:none; }
 .nav-tab.project-tab.show { display:flex; }
 @media (max-width: 900px) {
@@ -346,6 +360,15 @@ nav { position: fixed; top: 0; left: 0; right: 0; z-index: 200; height: 52px; di
 }
 #panel-projects .proj-card .pcard-actions a {
   cursor: pointer;
+  border-color: var(--cyan) !important;
+  color: var(--cyan) !important;
+}
+#panel-projects .proj-card .pcard-actions a::before {
+  background: var(--cyan) !important;
+}
+#panel-projects .proj-card .pcard-actions a.btn-ghost:hover {
+  border-color: var(--cyan) !important;
+  color: var(--cyan) !important;
 }
 
 /* Architecture thumbnails added to selected project cards */
@@ -358,6 +381,7 @@ nav { position: fixed; top: 0; left: 0; right: 0; z-index: 200; height: 52px; di
   overflow: hidden;
   border: 1px solid rgba(0,255,231,0.14);
   background: #06101d;
+  flex-shrink: 0;
 }
 
 .pcard-architecture-thumb img {
@@ -389,7 +413,7 @@ nav { position: fixed; top: 0; left: 0; right: 0; z-index: 200; height: 52px; di
 .arch-image-caption {
   padding: 0.85rem 1rem;
   border-top: 1px solid rgba(0,255,231,0.12);
-  color: var(--text-dim);
+  color: var(--text);
   font-size: 0.58rem;
   line-height: 1.7;
   background: rgba(4,13,26,0.92);
@@ -600,7 +624,7 @@ body.lightbox-open {
 <div class="traj-card">
 <div class="card-index">FOUNDATION</div>
 <div class="card-title">Infrastructure<br/>Mastery</div>
-<p class="card-body">Deep roots in systems administration and enterprise networking, with hands-on experience managing the infrastructure that keeps business operations running efficiently. Skilled in maintaining system stability, supporting critical systems, and ensuring connectivity, security, and continuity across enterprise environments.</p>
+<p class="card-body">Strong foundation in systems engineering, server administration, and networking, with hands-on experience designing, maintaining, and troubleshooting secure, reliable infrastructure and critical enterprise services.</p>
 <div class="card-tags">
 <span class="card-tag">Linux / Windows Server</span>
 <span class="card-tag">Cisco / Fortinet</span>
@@ -612,7 +636,7 @@ body.lightbox-open {
 <div class="traj-card">
 <div class="card-index">ELEVATION</div>
 <div class="card-title">Cloud<br/>Architecture</div>
-<p class="card-body">Designing scalable, automated environments across AWS &amp; Azure. Bridging legacy on-prem systems with high-availability cloud infrastructure through IaC, CI/CD automation, and resilient multi-region deployments that support performance, scalability, and operational continuity.</p>
+<p class="card-body">Designing scalable, automated environments across Amazon Web Services (AWS) and Azure, bridging on-premises systems with resilient cloud infrastructure through Infrastructure as Code (IaC), Continuous Integration/Continuous Delivery (CI/CD), and high-availability architecture.</p>
 <div class="card-tags">
 <span class="card-tag">AWS / Azure</span>
 <span class="card-tag">Terraform</span>
@@ -624,7 +648,7 @@ body.lightbox-open {
 <div class="traj-card">
 <div class="card-index">MISSION</div>
 <div class="card-title">Cloud<br/>Security</div>
-<p class="card-body">Architecting Zero-Trust security frameworks and automating IAM at scale across hybrid and cloud-native environments. Focused on building resilient, adaptive security models that proactively protect systems, identities, and access layers through automation, policy enforcement, and continuous validation.</p>
+<p class="card-body">Implementing Zero-Trust security frameworks and scalable Identity and Access Management (IAM) across hybrid cloud environments. Building resilient security architectures through policy enforcement, continuous validation, and intelligent access controls.</p>
 <div class="card-tags">
 <span class="card-tag">Zero-Trust</span>
 <span class="card-tag">IAM Automation</span>
@@ -646,9 +670,9 @@ body.lightbox-open {
 <div style="height:0.6rem;"></div>
 <div><span class="t-comment"># ──--- Profile ─────</span></div>
 <div><span class="t-key">"name"</span>: <span class="t-str">"Mohamed Kaba"</span></div>
-<div><span class="t-key">"role"</span>: <span class="t-str">"Cloud &amp; Security Engineer"</span></div>
-<div><span class="t-key">"focus"</span>: [<span class="t-str">"Infrastructure"</span>, <span class="t-str">"CloudArch"</span>, <span class="t-str">"ZeroTrust"</span>]</div>
-<div><span class="t-key">"certs"</span>: <span class="t-str">"AWS | Azure | CompTIA | Cisco"</span></div>
+<div><span class="t-key">"role"</span>: <span class="t-str">"Infrastructure Systems Engineer"</span></div>
+<div><span class="t-key">"focus"</span>: [<span class="t-str">"DevOps"</span>, <span class="t-str">"CloudArch"</span>, <span class="t-str">"ZeroTrust"</span>]</div>
+<div><span class="t-key">"certs"</span>: <span class="t-str">"AWS | Azure | Terraform | Cisco"</span></div>
 <div><span class="t-key">"threat_model"</span>: <span class="t-val">"assume-breach"</span></div>
 <div><span class="t-key">"uptime_sla"</span>: <span class="t-val">99.6%</span></div>
 <div><span class="t-key">"status"</span>: <span class="t-str">"CI/CD - Continuous Improvement Continuous Development"</span></div>
@@ -669,7 +693,9 @@ body.lightbox-open {
 <div aria-label="Open sporting ecommerce project architecture" class="proj-card" data-cat="homelab" onclick="openProject('sporting-ecommerce');" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();openProject('sporting-ecommerce');}" role="link" tabindex="0">
 <div class="pcard-cat">Applications</div>
 <div class="pcard-title">Sporting E-commerce Platform<span class="ip-tag">🟢 Production-ready</span></div>
-<p class="pcard-desc">An enterprise-grade sporting goods e-commerce application focused on performance, scalability, and reliability. It uses a Dockerized PostgreSQL database with Prisma 7 ORM and the modern Driver Adapter pattern for type-safe, efficient data access. Built on Next.js 16 with Turbopack, it delivers fast builds and a responsive, seamless user experience.</p><div aria-hidden="true" aria-label="Zoom architecture diagram" class="pcard-architecture-thumb" data-zoom-src="assets/sporting-ecommerce-architecture.png" data-zoom-title="Sporting E-commerce Platform 🟢 Production-ready" role="button" tabindex="0">
+<p class="pcard-desc">An sporting goods e-commerce platform showcasing an enterprise-grade infrastructure and modern cloud architecture. Focuses on scalability, observability, containerized deployments, disaster recovery, 
+  cloud design. It includes a Next.js storefront and admin
+  applications backed by PostgreSQL database and Prisma ORM.</p><div aria-hidden="true" aria-label="Zoom architecture diagram" class="pcard-architecture-thumb" data-zoom-src="assets/sporting-ecommerce-architecture.png" data-zoom-title="Sporting E-commerce Platform 🟢 Production-ready" role="button" tabindex="0">
 <img alt="" src="assets/sporting-ecommerce-architecture.png"/>
 </div>
 <div class="pcard-stack">
@@ -677,14 +703,14 @@ body.lightbox-open {
 </div>
 <div class="pcard-actions">
 <a class="btn btn-ghost" href="#project-sporting-ecommerce" onclick="event.stopPropagation();openProject('sporting-ecommerce');return false;" style="border-color:#3B82F6;color:#3B82F6;">Architecture</a>
-<a class="btn" href="https://e-commerce.mavencrest.site" onclick="event.stopPropagation();" target="_blank">Website</a>
+<a class="btn" href="https://store.mavencrest.site" onclick="event.stopPropagation();" target="_blank">Website</a>
 <a class="btn btn-ghost" href="https://github.com/mohamedkaba4/E-commerce" onclick="event.stopPropagation();" style="border-color: #2ac02f; color: #2ac02f;" target="_blank">GitHub</a>
 </div>
 </div>
 <div aria-label="Open weather app project architecture" class="proj-card" data-cat="homelab" onclick="openProject('weather-app');" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();openProject('weather-app');}" role="link" tabindex="0">
 <div class="pcard-cat">Applications</div>
 <div class="pcard-title">API Powered Weather App<span class="ip-tag">🟢 Production-ready</span></div>
-<p class="pcard-desc">Engineered hybrid-architecture web application by decoupling a static Nginx-hosted frontend from a scalable serverless backend. Utilized AWS Lambda and API Gateway to execute dynamic processing, optimizing infrastructure costs. Strengthened security by migrating sensitive API credentials to protected Lambda Environment Variables.</p><div aria-hidden="true" aria-label="Zoom architecture diagram" class="pcard-architecture-thumb" data-zoom-src="assets/api-weather-app-architecture.png" data-zoom-title="API Powered Weather App 🟢 Production-ready" role="button" tabindex="0">
+<p class="pcard-desc">A hybrid-architecture web application, using a static S3-hosted frontend and a scalable serverless backend. Used AWS Lambda and API Gateway to execute dynamic processing, optimizing infrastructure costs. Strengthened security by migrating sensitive API credentials to protected Lambda Environment Variables.</p><div aria-hidden="true" aria-label="Zoom architecture diagram" class="pcard-architecture-thumb" data-zoom-src="assets/api-weather-app-architecture.png" data-zoom-title="API Powered Weather App 🟢 Production-ready" role="button" tabindex="0">
 <img alt="" src="assets/api-weather-app-architecture.png"/>
 </div>
 <div class="pcard-stack">
@@ -700,7 +726,7 @@ body.lightbox-open {
 <div class="pcard-cat">Cloud Infrastructure</div>
 <div class="pcard-title">AWS Enterprise Migration<span class="ip-tag">🟢 Production-ready</span></div>
 <p>
-<p class="pcard-desc">Migration of a production-ready sporting goods e-commerce platform to AWS, mapping workloads to cloud-native services for performance, scalability, and reliability. Utilized Amazon EC2, Amazon RDS (PostgreSQL), Amazon S3, and Amazon VPC.</p><div aria-hidden="true" aria-label="Zoom architecture diagram" class="pcard-architecture-thumb" data-zoom-src="assets/aws-enterprise-migration-architecture-dark.png" data-zoom-title="AWS Enterprise Migration 🟢 Production-ready" role="button" tabindex="0">
+<p class="pcard-desc">Migration of a Sporting E-commerce Platform to AWS, mapping workloads to cloud-native services for performance, scalability, and reliability. Backed by Amazon EC2, Auto-scaling, Neon PostgreSQL DB. CI/CD pipeline is configred with Github Actions, new deployments build isoloted AMI artifacts. Infrastructure is deployed and mangaged by Terraform IaC. </p><div aria-hidden="true" aria-label="Zoom architecture diagram" class="pcard-architecture-thumb" data-zoom-src="assets/aws-enterprise-migration-architecture-dark.png" data-zoom-title="AWS Enterprise Migration 🟢 Production-ready" role="button" tabindex="0">
 <img alt="" src="assets/aws-enterprise-migration-architecture-dark.png"/>
 </div>
 <div class="pcard-stack">
@@ -715,7 +741,8 @@ body.lightbox-open {
 <div class="pcard-cat">Cloud Infrastructure</div>
 <div class="pcard-title">Azure Migration Solution<span class="ip-tag">🟢 Production-ready</span></div>
 <p>
-<p class="pcard-desc">Migrated a serverless, event-driven backend architecture to Azure, focusing on scalability and security. Leveraged Azure Functions and Azure API Management to deliver a decoupled, highly scalable backend with minimal operational overhead.</p><div aria-hidden="true" aria-label="Zoom architecture diagram" class="pcard-architecture-thumb" data-zoom-src="assets/azure-migration-solution-architecture-dark.png" data-zoom-title="Azure Migration Solution 🟢 Production-ready" role="button" tabindex="0">
+<p class="pcard-desc">Sporting E-commerce Platform migration to Azure using a containerized architecture. Terraform provisions the infrastructure, while Azure DevOps CI/CD builds, pushes, and deploys container images through Azure Container Registry to Azure Container Apps. 
+   Scalability, security, monitoring, and high availability built into the design.</p><div aria-hidden="true" aria-label="Zoom architecture diagram" class="pcard-architecture-thumb" data-zoom-src="assets/azure-migration-solution-architecture-dark.png" data-zoom-title="Azure Migration Solution 🟢 Production-ready" role="button" tabindex="0">
 <img alt="" src="assets/azure-migration-solution-architecture-dark.png"/>
 </div>
 <div class="pcard-stack">
@@ -726,11 +753,63 @@ body.lightbox-open {
 <a class="btn btn-ghost" href="https://github.com/mohamedkaba4/AzureMigration" onclick="event.stopPropagation();" style="border-color: #a855f7; color: #a855f7;" target="_blank">GitHub</a>
 </div>
 </div>
+<div aria-label="Open disaster recovery project architecture" class="proj-card" data-cat="cloud" onclick="openProject('disaster-recovery');" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();openProject('disaster-recovery');}" role="link" tabindex="0">
+<div class="pcard-cat">DRaaS / BaaS</div>
+<div class="pcard-title">Disaster Recovery <span class="ip-tag">🟢 Production-ready</span></div>
+<p>
+<p class="pcard-desc">Disaster recovery orchestration for the Mavencrest Azure container platform.
+This repository handles a full recovery using two repositories as its source of truth:
+ MavencrestAzure — Terraform IaC
+  E-commerce - Application source and Docker images. DR orchestration pipeline runs depending on level of failure detected.</p><div aria-hidden="true" aria-label="Zoom architecture diagram" class="pcard-architecture-thumb" data-zoom-src="assets/disasterrecovery.png" data-zoom-title="Disaster Recovery 🟢 Production-ready" role="button" tabindex="0">
+    <img alt="" src="assets/disasterrecovery.png"/>
+</div>
+<div class="pcard-stack">
+<span class="stack-pill">Azure Site Recovery</span><span class="stack-pill">Azure Backup</span><span class="stack-pill">Recovery Vault</span><span class="stack-pill">Terraform</span>
+</div>
+<div class="pcard-actions">
+<a class="btn btn-ghost" href="#project-disaster-recovery" onclick="event.stopPropagation();openProject('disaster-recovery');return false;" style="border-color:#3B82F6;color:#3B82F6;">Architecture</a>
+<a class="btn" href="https://github.com/mohamedkaba4/Mavencrest-Disaster-Recovery" onclick="event.stopPropagation();" target="_blank">GitHub →</a>
+</div>
+</div>
+<div aria-label="Open aws landing zone project architecture" class="proj-card" data-cat="cloud" onclick="openProject('aws-landing-zone');" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();openProject('aws-landing-zone');}" role="link" tabindex="0">
+<div class="pcard-cat">Cloud Infrastructure</div>
+<div class="pcard-title">Multi-Region AWS Landing Zone <span class="ip-tag">🚧 In Progress</span></div>
+<p class="pcard-desc">Automated provisioning of a secure, multi-account AWS environment using Terraform 
+  and AWS Control Tower to enforce governance and scalable cloud architecture. 
+  This includes Service Control Policies, security guard rails, IAM permission boundaries, and centralized identity management.</p><div aria-hidden="true" aria-label="Zoom architecture diagram" class="pcard-architecture-thumb" data-zoom-src="assets/awslandingzone.png" data-zoom-title="Multi-Region AWS Landing Zone 🚧 In Progress" role="button" tabindex="0">
+    <img alt="" src="assets/awslandingzone.png"/>
+</div>
+<div class="pcard-stack">
+<span class="stack-pill">Terraform</span><span class="stack-pill">AWS</span><span class="stack-pill">Control Tower</span><span class="stack-pill">IAM</span><span class="stack-pill">S3</span>
+</div>
+<div class="pcard-actions"> 
+<a class="btn btn-ghost" href="#project-aws-landing-zone" onclick="event.stopPropagation();openProject('aws-landing-zone');return false;" style="border-color:#3B82F6;color:#3B82F6;">Architecture</a>
+<a class="btn btn-ghost" href="https://github.com/mohamedkaba4" onclick="event.stopPropagation();" style="border-color: #a855f7; color: #a855f7;" target="_blank">GitHub</a>
+</div>
+</div>
+<div aria-label="Open azure landing zone project architecture" class="proj-card" data-cat="cloud" onclick="openProject('azure-landing-zone');" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();openProject('azure-landing-zone');}" role="link" tabindex="0">
+<div class="pcard-cat">Cloud Infrastructure</div>
+<div class="pcard-title">Azure Landing Zones <span class="ip-tag">🚧 In Progress</span></div>
+<p>
+<p class="pcard-desc">A secure, scalable Azure cloud foundation using Terraform, incorporating Azure Policy, management groups, RBAC, 
+  identity governance, security guardrails, and centralized resource management to enforce governance across environments.</p><div aria-hidden="true" aria-label="Zoom architecture diagram" class="pcard-architecture-thumb" data-zoom-src="assets/mc-landingzone-pic.png" data-zoom-title="Azure Landing Zones 🚧 In Progress" role="button" tabindex="0">
+    <img alt="" src="assets/mc-landingzone-pic.png"/>
+</div>
+<div class="pcard-stack">
+<span class="stack-pill">Terraform</span><span class="stack-pill">Azure</span><span class="stack-pill">Management Groups</span><span class="stack-pill">Azure Policy</span><span class="stack-pill">RBAC</span>
+</div>
+<div class="pcard-actions">
+<a class="btn" href="https://github.com/mohamedkaba4/AzureLandingZone" onclick="event.stopPropagation();" target="_blank">GitHub →</a>
+<a class="btn btn-ghost" href="#project-azure-landing-zone" onclick="event.stopPropagation();openProject('azure-landing-zone');return false;" style="border-color:#3B82F6;color:#3B82F6;">Architecture</a>
+</div>
+</div>
 <div aria-label="Open kubernetes dockingstation project architecture" class="proj-card" data-cat="cloud" onclick="openProject('kubernetes-dockingstation');" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();openProject('kubernetes-dockingstation');}" role="link" tabindex="0">
 <div class="pcard-cat">Containers</div>
 <div class="pcard-title">Kubernetes DockingStation <span class="ip-tag">🚧 In Progress</span></div>
-<p>
-<p class="pcard-desc">A Kubernetes deployment of a containerized e-commerce application featuring horizontal pod autoscaling, rolling updates, service discovery, ingress-based routing, and high availability for resilient, scalable workloads.</p>
+<p class="pcard-desc">A Kubernetes deployment of a containerized e-commerce application featuring horizontal pod autoscaling, 
+  rolling updates, service discovery.</p><div aria-hidden="true" aria-label="Zoom architecture diagram" class="pcard-architecture-thumb" data-zoom-src="assets/underConstruction.png" data-zoom-title="Kubernetes DockingStation 🚧 In Progress" role="button" tabindex="0">
+    <img alt="" src="assets/underConstruction.png"/>
+</div>
 <div class="pcard-stack">
 <span class="stack-pill">Apache</span><span class="stack-pill">Docker</span><span class="stack-pill">Docker Compose</span><span class="stack-pill">Linux</span>
 </div>
@@ -739,50 +818,15 @@ body.lightbox-open {
 <a class="btn" href="https://github.com/mohamedkaba4/Kubernetes-DockingStation" onclick="event.stopPropagation();" target="_blank">GitHub →</a>
 </div>
 </div>
-<div aria-label="Open aws landing zone project architecture" class="proj-card" data-cat="cloud" onclick="openProject('aws-landing-zone');" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();openProject('aws-landing-zone');}" role="link" tabindex="0">
-<div class="pcard-cat">Cloud Infrastructure</div>
-<div class="pcard-title">Multi-Region AWS Landing Zone <span class="ip-tag">🚧 In Progress</span></div>
-<p class="pcard-desc">Automated the provisioning of a secure, multi-account AWS environment using Terraform and AWS Control Tower to enforce governance and scalable cloud architecture. This includes Service Control Policies, IAM permission boundaries, and centralized identity management.</p>
-<div class="pcard-stack">
-<span class="stack-pill">Terraform</span><span class="stack-pill">AWS</span><span class="stack-pill">Control Tower</span><span class="stack-pill">IAM</span><span class="stack-pill">S3</span>
-</div>
-<div class="pcard-actions">
-<a class="btn btn-ghost" href="#project-aws-landing-zone" onclick="event.stopPropagation();openProject('aws-landing-zone');return false;" style="border-color:#3B82F6;color:#3B82F6;">Architecture</a>
-<a class="btn btn-ghost" href="https://github.com/mohamedkaba4" onclick="event.stopPropagation();" style="border-color: #a855f7; color: #a855f7;" target="_blank">GitHub</a>
-</div>
-</div>
-<div aria-label="Open secure infrastructure project architecture" class="proj-card" data-cat="cloud" onclick="openProject('secure-infrastructure');" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();openProject('secure-infrastructure');}" role="link" tabindex="0">
-<div class="pcard-cat">Cloud Infrastructure</div>
-<div class="pcard-title">Secure Infrastructure <span class="ip-tag">🚧 In Progress</span></div>
-<p>
-<p class="pcard-desc">Designed and maintained secure infrastructure across cloud and hybrid environments, focusing on identity-first security, network hardening, and least-privilege access controls. Implemented security best practices including IAM governance and continuous monitoring.</p>
-<div class="pcard-stack">
-<span class="stack-pill">Terraform</span><span class="stack-pill">AWS</span><span class="stack-pill">Control Tower</span><span class="stack-pill">IAM</span><span class="stack-pill">S3</span>
-</div>
-<div class="pcard-actions">
-<a class="btn btn-ghost" href="#project-secure-infrastructure" onclick="event.stopPropagation();openProject('secure-infrastructure');return false;" style="border-color:#3B82F6;color:#3B82F6;">Architecture</a>
-<a class="btn btn-ghost" href="https://github.com/mohamedkaba4/VerySecure" onclick="event.stopPropagation();" style="border-color: #a855f7; color: #a855f7;" target="_blank">GitHub</a>
-</div>
-</div>
-<div aria-label="Open container devsecops project architecture" class="proj-card" data-cat="cloud" onclick="openProject('container-devsecops');" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();openProject('container-devsecops');}" role="link" tabindex="0">
-<div class="pcard-cat">Security</div>
-<div class="pcard-title">Container DevSecOps <span class="ip-tag">🚧 In Progress</span></div>
-<p>
-<p class="pcard-desc">Cloud based CI/CD pipeline that automatically builds, tests, scans, and verifies Docker images for vulnerabilities before they can ever be deployed. Terraform script to spin up the cloud infrastructure in Azure Container Registry.</p>
-<div class="pcard-stack">
-<span class="stack-pill">Apache</span><span class="stack-pill">Azure Container Registry</span><span class="stack-pill">Terraform </span><span class="stack-pill">CI/CD</span>
-</div>
-<div class="pcard-actions">
-<a class="btn btn-ghost" href="#project-container-devsecops" onclick="event.stopPropagation();openProject('container-devsecops');return false;" style="border-color:#3B82F6;color:#3B82F6;">Architecture</a>
-<a class="btn" href="https://github.com/mohamedkaba4/Weather" onclick="event.stopPropagation();" target="_blank">GitHub →</a>
-</div>
-
-</div>
 <div aria-label="Open analytics dashboard project architecture" class="proj-card" data-cat="cloud" onclick="openProject('analytics-dashboard');" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();openProject('analytics-dashboard');}" role="link" tabindex="0">
 <div class="pcard-cat">Cloud Infrastructure</div>
-<div class="pcard-title">Centralized Analytics Dashboard <span class="ip-tag">🚧 In Progress</span></div>
+<div class="pcard-title">Site Reliability Dashboard <span class="ip-tag">🚧 In Progress</span></div>
 <p>
-<p class="pcard-desc">Monitor, aggregate data, and observe an entire ecosystem. will stream telemetry data—like HTTP request counts, game scores, application errors, or container health—into this central pipeline. Visualization Layer (Grafana)</p>
+<p class="pcard-desc">A centralized observability and engineering analytics platform across AWS and 
+  Azure using Grafana, OpenTelemetry, CloudWatch, and Azure Monitor 
+  to track metrics, logs, traces, alerts, SLOs, and CI/CD performance. It combines app health, infrastructure behavior, and deployment activity to improve troubleshooting, reliability, and operational visibility.</p><div aria-hidden="true" aria-label="Zoom architecture diagram" class="pcard-architecture-thumb" data-zoom-src="assets/underConstruction.png" data-zoom-title="Centralized Analytics Dashboard 🚧 In Progress" role="button" tabindex="0">
+  <img alt="" src="assets/underConstruction.png"/>
+</div>
 <div class="pcard-stack">
 <span class="stack-pill">Terraform</span><span class="stack-pill">AWS</span><span class="stack-pill">Control Tower</span><span class="stack-pill">IAM</span><span class="stack-pill">S3</span>
 </div>
@@ -795,7 +839,10 @@ body.lightbox-open {
 <div class="pcard-cat">Cloud Infrastructure</div>
 <div class="pcard-title">FinOps Platform <span class="ip-tag">🚧 In Progress</span></div>
 <p>
-<p class="pcard-desc">Cloud cost governance platform providing real-time spend visibility, budget management, chargeback/showback reporting, resource optimization, and actionable savings recommendations across multi-cloud environments.</p>
+<p class="pcard-desc">Cloud cost governance platform providing real-time spend visibility, budget management, reporting, 
+  resource optimization, and savings recommendations across multi-cloud environment.</p><div aria-hidden="true" aria-label="Zoom architecture diagram" class="pcard-architecture-thumb" data-zoom-src="assets/underConstruction.png" data-zoom-title="FinOps Platform 🚧 In Progress" role="button" tabindex="0">
+    <img alt="" src="assets/underConstruction.png"/>
+    </div>
 <div class="pcard-stack">
 <span class="stack-pill">Azure</span><span class="stack-pill">AWS</span><span class="stack-pill">Power BI</span><span class="stack-pill">Terraform</span><span class="stack-pill">FinOps</span>
 </div>
@@ -804,30 +851,20 @@ body.lightbox-open {
 <a class="btn btn-ghost" href="#project-finops-platform" onclick="event.stopPropagation();openProject('finops-platform');return false;" style="border-color:#3B82F6;color:#3B82F6;">Architecture</a>
 </div>
 </div>
-<div aria-label="Open disaster recovery project architecture" class="proj-card" data-cat="cloud" onclick="openProject('disaster-recovery');" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();openProject('disaster-recovery');}" role="link" tabindex="0">
-<div class="pcard-cat">DRaaS / BaaS</div>
-<div class="pcard-title">Disaster Recovery <span class="ip-tag">🚧 In Progress</span></div>
-<p>
-<p class="pcard-desc">Designed a cloud-based disaster recovery and backup solution with automated backup policies, cross-region replication, recovery orchestration, and rapid failover to improve business continuity while minimizing downtime.</p>
-<div class="pcard-stack">
-<span class="stack-pill">Azure Site Recovery</span><span class="stack-pill">Azure Backup</span><span class="stack-pill">Recovery Vault</span><span class="stack-pill">Terraform</span>
-</div>
-<div class="pcard-actions">
-<a class="btn" href="https://github.com/mohamedkaba4/DisasterRecovery" onclick="event.stopPropagation();" target="_blank">GitHub →</a>
-<a class="btn btn-ghost" href="#project-disaster-recovery" onclick="event.stopPropagation();openProject('disaster-recovery');return false;" style="border-color:#3B82F6;color:#3B82F6;">Architecture</a>
-</div>
-</div>
-<div aria-label="Open azure landing zone project architecture" class="proj-card" data-cat="cloud" onclick="openProject('azure-landing-zone');" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();openProject('azure-landing-zone');}" role="link" tabindex="0">
+<div aria-label="Open secure infrastructure project architecture" class="proj-card" data-cat="cloud" onclick="openProject('secure-infrastructure');" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();openProject('secure-infrastructure');}" role="link" tabindex="0">
 <div class="pcard-cat">Cloud Infrastructure</div>
-<div class="pcard-title">Azure Landing Zones <span class="ip-tag">🚧 In Progress</span></div>
+<div class="pcard-title">Secure Infrastructure <span class="ip-tag">⏸ On Hold</span></div>
 <p>
-<p class="pcard-desc">Provisioned an enterprise-ready Azure Landing Zone using Terraform with management groups, Azure Policy, RBAC, networking, logging, and governance controls to establish a secure, scalable cloud foundation.</p>
+<p class="pcard-desc">Secure infrastructure across cloud and hybrid environments, focusing on identity-first security, network hardening, 
+  and least-privilege access controls. Focuses on security best practices including IAM governance and continuous monitoring.</p><div aria-hidden="true" aria-label="Zoom architecture diagram" class="pcard-architecture-thumb" data-zoom-src="assets/underConstruction.png" data-zoom-title="Secure Infrastructure ⏸ On Hold" role="button" tabindex="0">
+    <img alt="" src="assets/underConstruction.png"/>
+</div>
 <div class="pcard-stack">
-<span class="stack-pill">Terraform</span><span class="stack-pill">Azure</span><span class="stack-pill">Management Groups</span><span class="stack-pill">Azure Policy</span><span class="stack-pill">RBAC</span>
+<span class="stack-pill">Terraform</span><span class="stack-pill">AWS</span><span class="stack-pill">Control Tower</span><span class="stack-pill">IAM</span><span class="stack-pill">S3</span>
 </div>
 <div class="pcard-actions">
-<a class="btn" href="https://github.com/mohamedkaba4/AzureLandingZone" onclick="event.stopPropagation();" target="_blank">GitHub →</a>
-<a class="btn btn-ghost" href="#project-azure-landing-zone" onclick="event.stopPropagation();openProject('azure-landing-zone');return false;" style="border-color:#3B82F6;color:#3B82F6;">Architecture</a>
+<a class="btn btn-ghost" href="#project-secure-infrastructure" onclick="event.stopPropagation();openProject('secure-infrastructure');return false;" style="border-color:#3B82F6;color:#3B82F6;">Architecture</a>
+<a class="btn btn-ghost" href="https://github.com/mohamedkaba4/VerySecure" onclick="event.stopPropagation();" style="border-color: #a855f7; color: #a855f7;" target="_blank">GitHub</a>
 </div>
 </div>
 </div>
@@ -1469,7 +1506,7 @@ body.lightbox-open {
 </div>
 <div class="cert-section-label">// engineering credentials</div>
 <div class="cert-grid">
-<div class="cert-card" data-cat="aws">
+<div class="cert-card" data-cat="aws" style="--pcard-color:#ff7700;">
 <div class="pcard-cat">Amazon Web Services</div>
 <div class="pcard-title">AWS Solutions Architect Professional</div>
 <p class="pcard-desc">Validates advanced technical skills and experience in designing distributed applications and systems on the AWS platform. Focuses on complex multi-tier architecture strategy, cost optimization, scaling, and enterprise migration frameworks.</p>
@@ -1477,7 +1514,7 @@ body.lightbox-open {
 <span class="stack-pill">Advanced Architecture</span><span class="stack-pill">Cost Optimization</span><span class="stack-pill">Enterprise Migration</span>
 </div>
 </div>
-<div class="cert-card" data-cat="aws">
+<div class="cert-card" data-cat="aws" style="--pcard-color:#ff7700;">
 <div class="pcard-cat">Amazon Web Services</div>
 <div class="pcard-title">AWS Certified SysOps Administrator</div>
 <p class="pcard-desc">Validates technical expertise in deployment, management, security, and operations on the AWS platform. Confirms a strong understanding of system health monitoring, infrastructure automation, and resource provisioning.</p>
@@ -1485,7 +1522,7 @@ body.lightbox-open {
 <span class="stack-pill">Operations</span><span class="stack-pill">Deployment Automation</span><span class="stack-pill">Monitoring</span>
 </div>
 </div>
-<div class="cert-card" data-cat="aws">
+<div class="cert-card" data-cat="aws" style="--pcard-color:#ff7700;">
 <div class="pcard-cat">Amazon Web Services</div>
 <div class="pcard-title">AWS Solutions Architect Associate</div>
 <p class="pcard-desc">Demonstrates comprehensive knowledge of designing high-availability, cost-effective, and fault-tolerant distributed systems across AWS core services, focusing on compute, storage, networking, and security layers.</p>
@@ -1493,7 +1530,7 @@ body.lightbox-open {
 <span class="stack-pill">Cloud Systems Design</span><span class="stack-pill">Core Services</span><span class="stack-pill">High Availability</span>
 </div>
 </div>
-<div class="cert-card" data-cat="aws">
+<div class="cert-card" data-cat="aws" style="--pcard-color:#ff7700;">
 <div class="pcard-cat">Amazon Web Services</div>
 <div class="pcard-title">AWS Developer Associate</div>
 <p class="pcard-desc">Demonstrates technical proficiency in developing, deploying, and debugging cloud-native applications using AWS development tools, SDKs, serverless resources, and CI/CD pipelines.</p>
@@ -1501,7 +1538,7 @@ body.lightbox-open {
 <span class="stack-pill">Serverless Apps</span><span class="stack-pill">CI/CD Automation</span><span class="stack-pill">Cloud Development</span>
 </div>
 </div>
-<div class="cert-card" data-cat="network">
+<div class="cert-card" data-cat="network" style="--pcard-color:#7baccc;">
 <div class="pcard-cat">Cisco</div>
 <div class="pcard-title">Cisco Certified Network Associate (CCNA)</div>
 <p class="pcard-desc">Validates foundational knowledge of network infrastructure, covering IP connectivity, IP services, security fundamentals, automation, programmability, and routing/switching protocols.</p>
@@ -1509,15 +1546,7 @@ body.lightbox-open {
 <span class="stack-pill">Routing &amp; Switching</span><span class="stack-pill">Network Security</span><span class="stack-pill">IP Infrastructure</span>
 </div>
 </div>
-<div class="cert-card" data-cat="network">
-<div class="pcard-cat">CompTIA</div>
-<div class="pcard-title">CompTIA Network+</div>
-<p class="pcard-desc">Validates the technical skills needed to securely establish, maintain, troubleshoot, and optimize essential corporate networks across various hardware configurations and environments.</p>
-<div class="pcard-stack">
-<span class="stack-pill">Network Ops</span><span class="stack-pill">Troubleshooting</span><span class="stack-pill">Topology</span>
-</div>
-</div>
-<div class="cert-card in-progress" data-cat="azure">
+<div class="cert-card in-progress" data-cat="azure" style="--pcard-color:#2c73ee;">
 <div class="pcard-cat">Microsoft Azure</div>
 <div class="pcard-title">Azure Administrator Associate AZ-104 <span class="ip-tag">In Progress</span></div>
 <p class="pcard-desc">Validates enterprise-level skills required to implement, manage, and monitor identity, governance, storage, compute, and virtual networks in a cloud environment.</p>
@@ -1525,20 +1554,30 @@ body.lightbox-open {
 <span class="stack-pill">Hybrid Identity</span><span class="stack-pill">Virtual Networking</span><span class="stack-pill">Azure Administration</span>
 </div>
 </div>
-<div class="cert-card" data-cat="azure">
-<div class="pcard-cat">Microsoft Azure</div>
-<div class="pcard-title">Azure Fundamentals AZ-900</div>
-<p class="pcard-desc">Demonstrates baseline foundational understanding of cloud concepts, core Azure architecture models, management tools, compliance frameworks, and network security infrastructure options.</p>
-<div class="pcard-stack">
-<span class="stack-pill">Azure Basics</span><span class="stack-pill">Cloud Concepts</span><span class="stack-pill">Governance</span>
-</div>
-</div>
-<div class="cert-card" data-cat="terraform" style="--pcard-color:#EE0000;">
+<div class="cert-card" data-cat="terraform" style="--pcard-color:#8d01d8;">
 <div class="pcard-cat">HashiCorp</div>
-<div class="pcard-title">Terraform Associate (004)</div>
+<div class="pcard-title">Terraform Associate (004)<span class="ip-tag">In Progress</span></div>
 <p class="pcard-desc">Demonstrates baseline foundational understanding of cloud concepts, core Azure architecture models, management tools, compliance frameworks, and network security infrastructure options.</p>
 <div class="pcard-stack">
 <span class="stack-pill">IaC</span><span class="stack-pill">Cloud Deployment</span><span class="stack-pill">Governance</span>
+</div>
+</div>
+<div class="cert-card" data-cat="linux" style="--pcard-color:#EE0000;">
+<div class="pcard-cat">RedHat</div>
+<div class="pcard-title">Red Hat Certified System Administrator (RHCSA)<span class="ip-tag">In Progress</span></div>
+<p class="pcard-desc">Proves  proficiency in managing files, controlling the command-line shell, 
+  configuring local storage, managing user accounts, and validates essential skills in system security. </p>
+<div class="pcard-stack">
+<span class="stack-pill">Linux</span><span class="stack-pill">System Adminustration</span><span class="stack-pill">DevOps</span>
+</div>
+</div>
+<div class="cert-card" data-cat="linux" style="--pcard-color:#EE0000;">
+<div class="pcard-cat">RedHat</div>
+<div class="pcard-title">Red Hat Certified Engineer (RHCE)<span class="ip-tag">Expected 2027 </span></div>
+<p class="pcard-desc">Validates the ability to automate Linux environment tasks using Ansible Automation Platform. It proves the ability to manage, configure, 
+  and provision multiple systems at scale through infrastructure-as-code </p>
+<div class="pcard-stack">
+<span class="stack-pill">Linux</span><span class="stack-pill">Ansible Automation</span><span class="stack-pill">IaC</span>
 </div>
 </div>
 </div>
