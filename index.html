@@ -18,8 +18,8 @@
   content="https://mavencrest.site/assets/og-image.png"
 />
 
-<link href="mc web icon.svg" rel="icon" type="image/svg+xml"/>
-<link href="mc web icon.svg" rel="icon" type="image/svg+xml"/>
+<link href="mc-logo.svg" rel="icon" type="image/svg+xml"/>
+<link href="mc-logo.svg" rel="icon" type="image/svg+xml"/>
 <link href="https://fonts.googleapis.com" rel="preconnect"/>
 <link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&amp;family=Syne:wght@400;700;800&amp;display=swap" rel="stylesheet"/>
 <style>
@@ -102,8 +102,12 @@ nav { position: fixed; top: 0; left: 0; right: 0; z-index: 200; height: 52px; di
 
 /* PANELS */
 .panel { display: none; opacity: 0; transition: opacity 0.3s ease; }
-.panel.active { display: block; }
+.panel.main-panel { display: block; opacity: 1; scroll-margin-top: 52px; }
 .panel.visible { opacity: 1; }
+.panel.project-detail-panel.active { display: none; }
+#app.showing-project .panel.main-panel { display: none; }
+#app.showing-project .panel.project-detail-panel.active { display: block; }
+#app.showing-project .panel.project-detail-panel.visible { opacity: 1; }
 
 /* ══════════════════════════════
     HOME 
@@ -604,7 +608,7 @@ body.lightbox-open {
 <div class="status-item" style="margin-left:auto;"><span>Mohamed Kaba — Portfolio v2.0</span></div>
 </div>
 <div id="app">
-<div class="panel active visible" id="panel-home">
+<div class="panel main-panel active visible" id="panel-home">
 <section class="hero">
 <div class="hero-meta">cloud &amp; security engineering — portfolio</div>
 <h1 class="hero-name"><span>Mohamed</span><span class="line2">Kaba</span></h1>
@@ -683,7 +687,7 @@ body.lightbox-open {
 </div>
 <div style="height:8rem;"></div>
 </div>
-<div class="panel" id="panel-projects">
+<div class="panel main-panel" id="panel-projects">
 <div class="proj-header">
 <h2 class="section-title">Things I've <em>Built.</em></h2>
 <div class="proj-meta">Dashboard</div>
@@ -692,7 +696,7 @@ body.lightbox-open {
 <div class="proj-grid">
 <div aria-label="Open sporting ecommerce project architecture" class="proj-card" data-cat="homelab" onclick="openProject('sporting-ecommerce');" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();openProject('sporting-ecommerce');}" role="link" tabindex="0">
 <div class="pcard-cat">Applications</div>
-<div class="pcard-title">Sporting E-commerce Platform<span class="ip-tag">🟢 Production-ready</span></div>
+<div class="pcard-title">Sporting E-commerce App<span class="ip-tag">🟢 Production-ready</span></div>
 <p class="pcard-desc">An sporting goods e-commerce platform showcasing an enterprise-grade infrastructure and modern cloud architecture. Focuses on scalability, observability, containerized deployments, disaster recovery, 
   cloud design. It includes a Next.js storefront and admin
   applications backed by PostgreSQL database and Prisma ORM.</p><div aria-hidden="true" aria-label="Zoom architecture diagram" class="pcard-architecture-thumb" data-zoom-src="assets/sporting-ecommerce-architecture.png" data-zoom-title="Sporting E-commerce Platform 🟢 Production-ready" role="button" tabindex="0">
@@ -824,8 +828,8 @@ This repository handles a full recovery using two repositories as its source of 
 <p>
 <p class="pcard-desc">A centralized observability and engineering analytics platform across AWS and 
   Azure using Grafana, OpenTelemetry, CloudWatch, and Azure Monitor 
-  to track metrics, logs, traces, alerts, SLOs, and CI/CD performance. It combines app health, infrastructure behavior, and deployment activity to improve troubleshooting, reliability, and operational visibility.</p><div aria-hidden="true" aria-label="Zoom architecture diagram" class="pcard-architecture-thumb" data-zoom-src="assets/underConstruction.png" data-zoom-title="Centralized Analytics Dashboard 🚧 In Progress" role="button" tabindex="0">
-  <img alt="" src="assets/underConstruction.png"/>
+  to track metrics, logs, traces, alerts, SLOs, and CI/CD performance. It combines app health, infrastructure behavior, and deployment activity to improve troubleshooting, reliability, and operational visibility.</p><div aria-hidden="true" aria-label="Zoom architecture diagram" class="pcard-architecture-thumb" data-zoom-src="assets/sre-dashboard.png" data-zoom-title="Centralized Analytics Dashboard 🚧 In Progress" role="button" tabindex="0">
+  <img alt="" src="assets/sre-dashboard.png"/>
 </div>
 <div class="pcard-stack">
 <span class="stack-pill">Terraform</span><span class="stack-pill">AWS</span><span class="stack-pill">Control Tower</span><span class="stack-pill">IAM</span><span class="stack-pill">S3</span>
@@ -853,7 +857,7 @@ This repository handles a full recovery using two repositories as its source of 
 </div>
 <div aria-label="Open secure infrastructure project architecture" class="proj-card" data-cat="cloud" onclick="openProject('secure-infrastructure');" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();openProject('secure-infrastructure');}" role="link" tabindex="0">
 <div class="pcard-cat">Cloud Infrastructure</div>
-<div class="pcard-title">Secure Infrastructure <span class="ip-tag">⏸ On Hold</span></div>
+<div class="pcard-title">Mavencrest Security Hub<span class="ip-tag">⏸ On Hold</span></div>
 <p>
 <p class="pcard-desc">Secure infrastructure across cloud and hybrid environments, focusing on identity-first security, network hardening, 
   and least-privilege access controls. Focuses on security best practices including IAM governance and continuous monitoring.</p><div aria-hidden="true" aria-label="Zoom architecture diagram" class="pcard-architecture-thumb" data-zoom-src="assets/underConstruction.png" data-zoom-title="Secure Infrastructure ⏸ On Hold" role="button" tabindex="0">
@@ -1498,7 +1502,7 @@ This repository handles a full recovery using two repositories as its source of 
 </section>
 </div>
 </div>
-<div class="panel" id="panel-certifications">
+<div class="panel main-panel" id="panel-certifications">
 <div class="cert-header">
 <div class="cert-eyebrow">credential verification</div>
 <h2 class="section-title">Validated <em>Expertise.</em></h2>
@@ -1582,7 +1586,7 @@ This repository handles a full recovery using two repositories as its source of 
 </div>
 </div>
 </div>
-<div class="panel" id="panel-contact">
+<div class="panel main-panel" id="panel-contact">
 <div class="contact-wrap">
 <div class="contact-eyebrow">secure handshake</div>
 <h2 class="contact-title">Let's Connect<em>.</em></h2>
@@ -1609,51 +1613,69 @@ This repository handles a full recovery using two repositories as its source of 
 </div>
 <script>
 const PROJECT_IDS = ["sporting-ecommerce", "weather-app", "kubernetes-dockingstation", "aws-landing-zone", "secure-infrastructure", "container-devsecops", "aws-enterprise-migration", "azure-migration", "analytics-dashboard", "finops-platform", "disaster-recovery", "azure-landing-zone"];
+const MAIN_TABS = ['home', 'projects', 'certifications', 'contact'];
+let navScrollLock = false;
+let navScrollTimer = 0;
 
-function hideAllPanels() {
-  document.querySelectorAll('.panel').forEach(panel => {
-    panel.classList.remove('active');
-    panel.classList.remove('visible');
-  });
+function setNavActive(tabId) {
   document.querySelectorAll('.nav-tab').forEach(tab => tab.classList.remove('active'));
-}
-
-function activatePanel(panelId, tabId) {
-  hideAllPanels();
-
-  const panel = document.getElementById(panelId);
   const tab = document.getElementById('tab-' + tabId);
-  const projectTab = document.getElementById('tab-project');
-
-  if (panel) {
-    panel.classList.add('active');
-    requestAnimationFrame(() => panel.classList.add('visible'));
-  }
-
   if (tab) tab.classList.add('active');
 
+  const projectTab = document.getElementById('tab-project');
   if (projectTab) {
-    if (tabId === 'project') {
-      projectTab.classList.add('show', 'active');
-      projectTab.onclick = () => false;
-    } else {
-      projectTab.classList.remove('show', 'active');
-      projectTab.onclick = () => false;
-    }
+    if (tabId === 'project') projectTab.classList.add('show', 'active');
+    else projectTab.classList.remove('show', 'active');
   }
+}
 
-  window.scrollTo({ top: 0, behavior: 'smooth' });
+function hideProjectDetails() {
+  const app = document.getElementById('app');
+  if (app) app.classList.remove('showing-project');
+  document.querySelectorAll('.project-detail-panel').forEach(panel => {
+    panel.classList.remove('active', 'visible');
+  });
+}
+
+function instantScrollTo(y) {
+  const html = document.documentElement;
+  const previous = html.style.scrollBehavior;
+  html.style.scrollBehavior = 'auto';
+  window.scrollTo(0, y);
+  html.style.scrollBehavior = previous;
 }
 
 function switchTab(tabId, updateHash = true) {
-  activatePanel('panel-' + tabId, tabId);
+  if (!MAIN_TABS.includes(tabId)) return;
+  hideProjectDetails();
+  setNavActive(tabId);
   if (updateHash) history.pushState(null, '', '#' + tabId);
+
+  const panel = document.getElementById('panel-' + tabId);
+  if (!panel) return;
+
+  navScrollLock = true;
+  clearTimeout(navScrollTimer);
+  panel.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  navScrollTimer = setTimeout(() => { navScrollLock = false; }, 900);
 }
 
 function openProject(projectId, updateHash = true) {
   if (!PROJECT_IDS.includes(projectId)) return;
-  activatePanel('panel-project-' + projectId, 'project');
+  document.querySelectorAll('.project-detail-panel').forEach(panel => {
+    panel.classList.remove('active', 'visible');
+  });
+
+  const panel = document.getElementById('panel-project-' + projectId);
+  const app = document.getElementById('app');
+  if (!panel || !app) return;
+
+  app.classList.add('showing-project');
+  panel.classList.add('active');
+  requestAnimationFrame(() => panel.classList.add('visible'));
+  setNavActive('project');
   if (updateHash) history.pushState(null, '', '#project-' + projectId);
+  instantScrollTo(0);
 }
 
 function routeFromHash() {
@@ -1667,11 +1689,46 @@ function routeFromHash() {
     }
   }
 
-  const validTabs = ['home', 'projects', 'certifications', 'contact'];
-  switchTab(validTabs.includes(hash) ? hash : 'home', false);
+  const tabId = MAIN_TABS.includes(hash) ? hash : 'home';
+  hideProjectDetails();
+  setNavActive(tabId);
+
+  const panel = document.getElementById('panel-' + tabId);
+  if (panel && tabId !== 'home') {
+    navScrollLock = true;
+    clearTimeout(navScrollTimer);
+    panel.scrollIntoView({ behavior: 'auto', block: 'start' });
+    navScrollTimer = setTimeout(() => { navScrollLock = false; }, 400);
+  }
 }
 
-window.addEventListener('DOMContentLoaded', routeFromHash);
+function initSectionObserver() {
+  const panels = MAIN_TABS
+    .map((id) => document.getElementById('panel-' + id))
+    .filter(Boolean);
+
+  const observer = new IntersectionObserver((entries) => {
+    if (document.getElementById('app').classList.contains('showing-project')) return;
+    if (navScrollLock) return;
+
+    const visible = entries
+      .filter((entry) => entry.isIntersecting)
+      .sort((a, b) => b.intersectionRatio - a.intersectionRatio);
+    if (!visible.length) return;
+
+    const tabId = visible[0].target.id.replace('panel-', '');
+    setNavActive(tabId);
+    const nextHash = '#' + tabId;
+    if (location.hash !== nextHash) history.replaceState(null, '', nextHash);
+  }, { rootMargin: '-45% 0px -45% 0px', threshold: [0, 0.25, 0.5, 1] });
+
+  panels.forEach((panel) => observer.observe(panel));
+}
+
+window.addEventListener('DOMContentLoaded', () => {
+  routeFromHash();
+  initSectionObserver();
+});
 window.addEventListener('hashchange', routeFromHash);
 
 // Cursor Tracking Logic
