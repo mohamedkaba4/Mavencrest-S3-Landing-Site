@@ -9,10 +9,8 @@
       "Action": "sts:AssumeRoleWithWebIdentity",
       "Condition": {
         "StringEquals": {
-          "token.actions.githubusercontent.com:aud": "sts.amazonaws.com"
-        },
-        "StringLike": {
-          "token.actions.githubusercontent.com:sub": "repo:mohamedkaba4/Mavencrest-S3-Landing-Site:*"
+          "token.actions.githubusercontent.com:aud": "sts.amazonaws.com",
+          "token.actions.githubusercontent.com:sub": "repo:mohamedkaba4@212305916/Mavencrest-S3-Landing-Site@1235203884:ref:refs/heads/main"
         }
       }
     }
