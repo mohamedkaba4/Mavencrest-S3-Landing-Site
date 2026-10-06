@@ -1,0 +1,2 @@
+Run cmd from project root:
+aws s3 cp index.html s3://landing.mavencrest.site/index.html
