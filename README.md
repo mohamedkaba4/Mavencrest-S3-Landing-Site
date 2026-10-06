@@ -1,43 +1,57 @@
 # Mavencrest Static Site
 
-Personal cloud and security engineering portfolio hosted on AWS using Amazon S3 and CloudFront.
-
-The site showcases cloud infrastructure, systems engineering, security, DevOps, and enterprise architecture projects using a liglhtweight static frontend that allows for fast and reliable global delivery.
+Personal cloud and Infrastructure engineering portfolio hosted on AWS using Amazon S3 and CloudFront. The site uses a lightweight static frontend (S3) for fast, reliable global delivery, with a GitHub Actions CI/CD pipeline that allows quick production updates directly from local dev through a simple Git push.
 
 ## Architecture
 
 ```text
-User
+Local Development
+  |
+  v
+Git Push
+  |
+  v
+GitHub Actions
+  |
+  v
+AWS OIDC / IAM Role
+  |
+  v
+Private S3 Bucket
   |
   v
 CloudFront
   |
   v
-Private Amazon S3 Bucket
-  |
-  +-- HTML
-  +-- CSS
-  +-- JavaScript
-  +-- Static Assets (images, media, etc)
+Route 53 + HTTPS
+```
 
-Amazon CloudFront serves the site publicly and handles caching, while the S3 bucket remains private and is only accessible through CloudFront.
+CloudFront is the public entry point and serves cached content globally. The S3 bucket remains private and is accessed only through Origin Access Control (OAC).
 
-# Stack
+## Stack
+
 - HTML, CSS, JavaScript
 - Amazon S3
 - Amazon CloudFront
 - Route 53
 - AWS Certificate Manager
-- Origin Access Control (OAC)
+- AWS IAM
+- GitHub Actions
+- OpenID Connect (OIDC)
 
-# Highlights
-- Secure static website hosting
+## CI/CD
+
+Pushes to the `main` branch automatically authenticate to AWS using OIDC, deploy updated site files to S3, and invalidate the CloudFront cache.
+
+## Highlights
+
 - Private S3 origin
-- CloudFront content delivery and caching
-- HTTPS with custom domain
-- Responsive portfolio design
-- Project and certification showcase
+- CloudFront global content delivery
+- HTTPS custom domain
+- Automated deployments from local Git pushes
+- OIDC-based AWS authentication
+- Automated CloudFront cache invalidation
 
-# Purpose
-This project serves as the central portfolio for my cloud, infrastructure, security, and DevOps work while demonstrating a simple production-style static hosting architecture on AWS.
+## Purpose
 
+This project serves as the central portfolio for my cloud, infrastructure, security, and DevOps work while demonstrating practical experience with AWS hosting, IAM, DNS, TLS, CDN architecture, and CI/CD automation.
