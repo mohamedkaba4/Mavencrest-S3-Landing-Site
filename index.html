@@ -725,6 +725,21 @@ body.lightbox-open {
 <a class="btn btn-ghost" href="https://github.com/mohamedkaba4/weather" onclick="event.stopPropagation();" style="border-color: #2ac02f; color: #2ac02f;" target="_blank">GitHub</a>
 </div>
 </div>
+<div aria-label="Open weather app project architecture" class="proj-card" data-cat="homelab" onclick="openProject('weather-app');" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();openProject('weather-app');}" role="link" tabindex="0">
+<div class="pcard-cat">Applications</div>
+<div class="pcard-title">WebApp on Lambda Compute<span class="ip-tag">🟢 Production-ready</span></div>
+<p class="pcard-desc">Next.js application hosting using AWS Lambda as it's compute engine.</p><div aria-hidden="true" aria-label="Zoom architecture diagram" class="pcard-architecture-thumb" data-zoom-src="assets/lambda-app.png" data-zoom-title="API Powered Weather App 🟢 Production-ready" role="button" tabindex="0">
+<img alt="" src="assets/lambda-app.png"/>
+</div>
+<div class="pcard-stack">
+<span class="stack-pill">Apache</span><span class="stack-pill">AWS Lambda</span><span class="stack-pill">AWS SSM</span><span class="stack-pill">AWS SDK</span>
+</div>
+<div class="pcard-actions">
+<a class="btn btn-ghost" href="#project-weather-app" onclick="event.stopPropagation();openProject('weather-app');return false;" style="border-color:#3B82F6;color:#3B82F6;">Architecture</a>
+<a class="btn" href="https://weather.mavencrest.site" onclick="event.stopPropagation();" target="_blank">Website</a>
+<a class="btn btn-ghost" href="https://github.com/mohamedkaba4/weather" onclick="event.stopPropagation();" style="border-color: #2ac02f; color: #2ac02f;" target="_blank">GitHub</a>
+</div>
+</div>
 <div aria-label="Open aws enterprise migration project architecture" class="proj-card" data-cat="cloud" onclick="openProject('aws-enterprise-migration');" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();openProject('aws-enterprise-migration');}" role="link" tabindex="0">
 <div class="pcard-cat">Cloud Infrastructure</div>
 <div class="pcard-title">AWS Enterprise Migration<span class="ip-tag">🟢 Production-ready</span></div>
@@ -807,9 +822,9 @@ This repository handles a full recovery using two repositories as its source of 
 </div>
 </div>
 <div aria-label="Open kubernetes dockingstation project architecture" class="proj-card" data-cat="cloud" onclick="openProject('kubernetes-dockingstation');" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();openProject('kubernetes-dockingstation');}" role="link" tabindex="0">
-<div class="pcard-cat">Containers</div>
-<div class="pcard-title">Kubernetes DockingStation <span class="ip-tag">🚧 In Progress</span></div>
-<p class="pcard-desc">A Kubernetes deployment of a containerized e-commerce application featuring horizontal pod autoscaling, 
+<div class="pcard-cat">K8 DockingStation</div>
+<div class="pcard-title">Bank of Anthos on Kubernetes <span class="ip-tag">🚧 In Progress</span></div>
+<p class="pcard-desc">A Kubernetes deployment of a open source project "Bank of Anthos" featuring horizontal pod autoscaling, 
   rolling updates, service discovery.</p><div aria-hidden="true" aria-label="Zoom architecture diagram" class="pcard-architecture-thumb" data-zoom-src="assets/underConstruction.png" data-zoom-title="Kubernetes DockingStation 🚧 In Progress" role="button" tabindex="0">
     <img alt="" src="assets/underConstruction.png"/>
 </div>
