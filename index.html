@@ -582,6 +582,43 @@ body.lightbox-open {
     text-align: center;
   }
 }
+
+/* Compact platform extensions with native keyboard-accessible expansion. */
+#panel-projects > .proj-grid:first-of-type { padding-bottom: 2rem; }
+.platform-extensions { align-items: start; grid-template-columns: repeat(auto-fit, minmax(min(100%, 300px), 1fr)); padding-bottom: 4rem; }
+.extension-card { display: block; min-height: 0; padding: 1.7rem 1.6rem; }
+.extension-card summary { cursor: pointer; list-style: none; position: relative; z-index: 1; }
+.extension-card summary::-webkit-details-marker { display: none; }
+.extension-card summary:focus-visible { outline: 2px solid var(--cyan); outline-offset: 8px; }
+.extension-card .pcard-cat { margin-bottom: 0.9rem; }
+.extension-card .pcard-title { min-height: 0; font-size: 1.15rem; margin-bottom: 0.8rem; }
+.extension-card .ip-tag { display: inline-block; margin: 0.5rem 0 0 0.5rem; }
+.extension-intro { color: var(--text-mid); font-size: 0.72rem; line-height: 1.8; margin: 0; }
+.extension-toggle { display: block; margin-top: 1.2rem; color: var(--cyan); font-size: 0.6rem; letter-spacing: 0.08em; text-transform: uppercase; }
+.extension-hide, .extension-card[open] .extension-show { display: none; }
+.extension-card[open] .extension-hide { display: inline; }
+.extension-content { border-top: 1px solid var(--border); margin-top: 1.4rem; padding-top: 1.2rem; }
+.extension-card .pcard-desc { min-height: 0; margin-bottom: 1.2rem; }
+.extension-card .pcard-actions { flex-wrap: wrap; gap: 8px; }
+
+
+/* Prominent headings for the two project sections. */
+#panel-projects > .proj-section-label {
+  font-family: var(--display);
+  font-size: clamp(1.15rem, 2vw, 1.6rem);
+  font-weight: 800;
+  color: var(--text);
+  letter-spacing: -0.02em;
+  text-transform: none;
+  line-height: 1.2;
+}
+
+
+.landing-zone-diagrams { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 0.8rem; }
+.landing-zone-label { font-size: 0.6rem; color: var(--cyan); margin-bottom: 0.6rem; letter-spacing: 0.06em; }
+.enterprise-landing-zones .pcard-actions { flex-wrap: wrap; }
+@media (max-width: 480px) { .landing-zone-diagrams { grid-template-columns: 1fr; } }
+
 </style>
 </head>
 <body>
@@ -687,11 +724,14 @@ body.lightbox-open {
 <div style="height:8rem;"></div>
 </div>
 <div class="panel main-panel" id="panel-projects">
-<div class="proj-header">
-<h2 class="section-title">Things I've <em>Built.</em></h2>
-<div class="proj-meta">Dashboard</div>
-</div>
-<div class="proj-section-label">// all projects</div>
+  <div class="proj-header">
+    <h2 class="section-title" style="white-space: nowrap;">
+      Cloud Platform <em>I Built &amp; Operate.</em>
+    </h2>
+    
+    <div class="proj-meta">Dashboard</div>
+  </div>
+<h3 class="proj-section-label">Featured Projects</h3>
 <div class="proj-grid">
 <div aria-label="Open sporting ecommerce project architecture" class="proj-card" data-cat="homelab" onclick="openProject('sporting-ecommerce');" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();openProject('sporting-ecommerce');}" role="link" tabindex="0">
 <div class="pcard-cat">Applications</div>
@@ -708,36 +748,6 @@ body.lightbox-open {
 <a class="btn btn-ghost" href="#project-sporting-ecommerce" onclick="event.stopPropagation();openProject('sporting-ecommerce');return false;" style="border-color:#3B82F6;color:#3B82F6;">Architecture</a>
 <a class="btn" href="https://store.mavencrest.site" onclick="event.stopPropagation();" target="_blank">Website</a>
 <a class="btn btn-ghost" href="https://github.com/mohamedkaba4/E-commerce" onclick="event.stopPropagation();" style="border-color: #2ac02f; color: #2ac02f;" target="_blank">GitHub</a>
-</div>
-</div>
-<div aria-label="Open weather app project architecture" class="proj-card" data-cat="homelab" onclick="openProject('weather-app');" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();openProject('weather-app');}" role="link" tabindex="0">
-<div class="pcard-cat">Applications</div>
-<div class="pcard-title">API Powered Weather App<span class="ip-tag">🟢 Production-ready</span></div>
-<p class="pcard-desc">A hybrid-architecture web application, using a static S3-hosted frontend and a scalable serverless backend. Used AWS Lambda and API Gateway to execute dynamic processing, optimizing infrastructure costs. Strengthened security by migrating sensitive API credentials to protected Lambda Environment Variables.</p><div aria-hidden="true" aria-label="Zoom architecture diagram" class="pcard-architecture-thumb" data-zoom-src="assets/api-weather-app-architecture.png" data-zoom-title="API Powered Weather App 🟢 Production-ready" role="button" tabindex="0">
-<img alt="" src="assets/api-weather-app-architecture.png"/>
-</div>
-<div class="pcard-stack">
-<span class="stack-pill">Apache</span><span class="stack-pill">AWS Lambda</span><span class="stack-pill">API Gateway</span><span class="stack-pill">Python</span>
-</div>
-<div class="pcard-actions">
-<a class="btn btn-ghost" href="#project-weather-app" onclick="event.stopPropagation();openProject('weather-app');return false;" style="border-color:#3B82F6;color:#3B82F6;">Architecture</a>
-<a class="btn" href="https://weather.mavencrest.site" onclick="event.stopPropagation();" target="_blank">Website</a>
-<a class="btn btn-ghost" href="https://github.com/mohamedkaba4/weather" onclick="event.stopPropagation();" style="border-color: #2ac02f; color: #2ac02f;" target="_blank">GitHub</a>
-</div>
-</div>
-<div aria-label="Open weather app project architecture" class="proj-card" data-cat="homelab" onclick="openProject('weather-app');" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();openProject('weather-app');}" role="link" tabindex="0">
-<div class="pcard-cat">Applications</div>
-<div class="pcard-title">WebApp on Lambda Compute<span class="ip-tag">🟢 Production-ready</span></div>
-<p class="pcard-desc">Next.js application hosting using AWS Lambda as it's compute engine.</p><div aria-hidden="true" aria-label="Zoom architecture diagram" class="pcard-architecture-thumb" data-zoom-src="assets/lambda-app.png" data-zoom-title="API Powered Weather App 🟢 Production-ready" role="button" tabindex="0">
-<img alt="" src="assets/lambda-app.png"/>
-</div>
-<div class="pcard-stack">
-<span class="stack-pill">Apache</span><span class="stack-pill">AWS Lambda</span><span class="stack-pill">AWS SSM</span><span class="stack-pill">AWS SDK</span>
-</div>
-<div class="pcard-actions">
-<a class="btn btn-ghost" href="#project-weather-app" onclick="event.stopPropagation();openProject('weather-app');return false;" style="border-color:#3B82F6;color:#3B82F6;">Architecture</a>
-<a class="btn" href="https://weather.mavencrest.site" onclick="event.stopPropagation();" target="_blank">Website</a>
-<a class="btn btn-ghost" href="https://github.com/mohamedkaba4/weather" onclick="event.stopPropagation();" style="border-color: #2ac02f; color: #2ac02f;" target="_blank">GitHub</a>
 </div>
 </div>
 <div aria-label="Open aws enterprise migration project architecture" class="proj-card" data-cat="cloud" onclick="openProject('aws-enterprise-migration');" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();openProject('aws-enterprise-migration');}" role="link" tabindex="0">
@@ -771,56 +781,26 @@ body.lightbox-open {
 <a class="btn btn-ghost" href="https://github.com/mohamedkaba4/AzureMigration" onclick="event.stopPropagation();" style="border-color: #a855f7; color: #a855f7;" target="_blank">GitHub</a>
 </div>
 </div>
-<div aria-label="Open disaster recovery project architecture" class="proj-card" data-cat="cloud" onclick="openProject('disaster-recovery');" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();openProject('disaster-recovery');}" role="link" tabindex="0">
-<div class="pcard-cat">DRaaS / BaaS</div>
-<div class="pcard-title">Disaster Recovery <span class="ip-tag">🟢 Production-ready</span></div>
-<p>
-<p class="pcard-desc">Disaster recovery orchestration for the Mavencrest Azure container platform.
-This repository handles a full recovery using two repositories as its source of truth:
- MavencrestAzure — Terraform IaC
-  E-commerce - Application source and Docker images. DR orchestration pipeline runs depending on level of failure detected.</p><div aria-hidden="true" aria-label="Zoom architecture diagram" class="pcard-architecture-thumb" data-zoom-src="assets/disasterrecovery.png" data-zoom-title="Disaster Recovery 🟢 Production-ready" role="button" tabindex="0">
-    <img alt="" src="assets/disasterrecovery.png"/>
-</div>
-<div class="pcard-stack">
-<span class="stack-pill">Azure Site Recovery</span><span class="stack-pill">Azure Backup</span><span class="stack-pill">Recovery Vault</span><span class="stack-pill">Terraform</span>
-</div>
-<div class="pcard-actions">
-<a class="btn btn-ghost" href="#project-disaster-recovery" onclick="event.stopPropagation();openProject('disaster-recovery');return false;" style="border-color:#3B82F6;color:#3B82F6;">Architecture</a>
-<a class="btn" href="https://github.com/mohamedkaba4/Mavencrest-Disaster-Recovery" onclick="event.stopPropagation();" target="_blank">GitHub →</a>
-</div>
-</div>
-<div aria-label="Open aws landing zone project architecture" class="proj-card" data-cat="cloud" onclick="openProject('aws-landing-zone');" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();openProject('aws-landing-zone');}" role="link" tabindex="0">
+<article class="proj-card enterprise-landing-zones" data-cat="cloud">
 <div class="pcard-cat">Cloud Infrastructure</div>
-<div class="pcard-title">Multi-Region AWS Landing Zone <span class="ip-tag">🚧 In Progress</span></div>
-<p class="pcard-desc">Automated provisioning of a secure, multi-account AWS environment using Terraform 
-  and AWS Control Tower to enforce governance and scalable cloud architecture. 
-  This includes Service Control Policies, security guard rails, IAM permission boundaries, and centralized identity management.</p><div aria-hidden="true" aria-label="Zoom architecture diagram" class="pcard-architecture-thumb" data-zoom-src="assets/awslandingzone.png" data-zoom-title="Multi-Region AWS Landing Zone 🚧 In Progress" role="button" tabindex="0">
+<div class="pcard-title">Enterprise Landing Zones (AZ and AWS)<span class="ip-tag">🚧 In Progress</span></div>
+<p class="pcard-desc">Secure cloud foundations across Azure and AWS, provisioned with Terraform. AWS uses Control Tower, multi-account governance, Service Control Policies, and IAM controls. Azure uses management groups, Azure Policy, role-based access control, and identity governance.</p>
+<div class="landing-zone-diagrams">
+<div><div class="landing-zone-label">AWS Landing Zone</div><div aria-label="Zoom architecture diagram" class="pcard-architecture-thumb" data-zoom-src="assets/awslandingzone.png" data-zoom-title="Multi-Region AWS Landing Zone 🚧 In Progress" role="button" tabindex="0">
     <img alt="" src="assets/awslandingzone.png"/>
-</div>
-<div class="pcard-stack">
-<span class="stack-pill">Terraform</span><span class="stack-pill">AWS</span><span class="stack-pill">Control Tower</span><span class="stack-pill">IAM</span><span class="stack-pill">S3</span>
-</div>
-<div class="pcard-actions"> 
-<a class="btn btn-ghost" href="#project-aws-landing-zone" onclick="event.stopPropagation();openProject('aws-landing-zone');return false;" style="border-color:#3B82F6;color:#3B82F6;">Architecture</a>
-<a class="btn btn-ghost" href="https://github.com/mohamedkaba4" onclick="event.stopPropagation();" style="border-color: #a855f7; color: #a855f7;" target="_blank">GitHub</a>
-</div>
-</div>
-<div aria-label="Open azure landing zone project architecture" class="proj-card" data-cat="cloud" onclick="openProject('azure-landing-zone');" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();openProject('azure-landing-zone');}" role="link" tabindex="0">
-<div class="pcard-cat">Cloud Infrastructure</div>
-<div class="pcard-title">Azure Landing Zones <span class="ip-tag">🚧 In Progress</span></div>
-<p>
-<p class="pcard-desc">A secure, scalable Azure cloud foundation using Terraform, incorporating Azure Policy, management groups, RBAC, 
-  identity governance, security guardrails, and centralized resource management to enforce governance across environments.</p><div aria-hidden="true" aria-label="Zoom architecture diagram" class="pcard-architecture-thumb" data-zoom-src="assets/mc-landingzone-pic.png" data-zoom-title="Azure Landing Zones 🚧 In Progress" role="button" tabindex="0">
+</div></div>
+<div><div class="landing-zone-label">Azure Landing Zones</div><div aria-label="Zoom architecture diagram" class="pcard-architecture-thumb" data-zoom-src="assets/mc-landingzone-pic.png" data-zoom-title="Azure Landing Zones 🚧 In Progress" role="button" tabindex="0">
     <img alt="" src="assets/mc-landingzone-pic.png"/>
+</div></div>
 </div>
 <div class="pcard-stack">
-<span class="stack-pill">Terraform</span><span class="stack-pill">Azure</span><span class="stack-pill">Management Groups</span><span class="stack-pill">Azure Policy</span><span class="stack-pill">RBAC</span>
+<span class="stack-pill">Terraform</span><span class="stack-pill">AWS</span><span class="stack-pill">Azure</span><span class="stack-pill">Control Tower</span><span class="stack-pill">Azure Policy</span><span class="stack-pill">IAM / RBAC</span>
 </div>
 <div class="pcard-actions">
-<a class="btn" href="https://github.com/mohamedkaba4/AzureLandingZone" onclick="event.stopPropagation();" target="_blank">GitHub →</a>
-<a class="btn btn-ghost" href="#project-azure-landing-zone" onclick="event.stopPropagation();openProject('azure-landing-zone');return false;" style="border-color:#3B82F6;color:#3B82F6;">Architecture</a>
+<a class="btn btn-ghost" href="#project-aws-landing-zone" onclick="openProject('aws-landing-zone');return false;">AWS Project →</a>
+<a class="btn btn-ghost" href="#project-azure-landing-zone" onclick="openProject('azure-landing-zone');return false;">Azure Project →</a>
 </div>
-</div>
+</article>
 <div aria-label="Open kubernetes dockingstation project architecture" class="proj-card" data-cat="cloud" onclick="openProject('kubernetes-dockingstation');" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();openProject('kubernetes-dockingstation');}" role="link" tabindex="0">
 <div class="pcard-cat">K8 DockingStation</div>
 <div class="pcard-title">Bank of Anthos on Kubernetes <span class="ip-tag">🚧 In Progress</span></div>
@@ -837,12 +817,13 @@ This repository handles a full recovery using two repositories as its source of 
 </div>
 </div>
 <div aria-label="Open analytics dashboard project architecture" class="proj-card" data-cat="cloud" onclick="openProject('analytics-dashboard');" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();openProject('analytics-dashboard');}" role="link" tabindex="0">
-<div class="pcard-cat">Cloud Infrastructure</div>
-<div class="pcard-title">Site Reliability Dashboard <span class="ip-tag">🚧 In Progress</span></div>
+<div class="pcard-cat">Site Reliability</div>
+<div class="pcard-title">Observability AI-OPS Dashboard <span class="ip-tag">🚧 In Progress</span></div>
 <p>
 <p class="pcard-desc">A centralized observability and engineering analytics platform across AWS and 
-  Azure using Grafana, OpenTelemetry, CloudWatch, and Azure Monitor 
-  to track metrics, logs, traces, alerts, SLOs, and CI/CD performance. It combines app health, infrastructure behavior, and deployment activity to improve troubleshooting, reliability, and operational visibility.</p><div aria-hidden="true" aria-label="Zoom architecture diagram" class="pcard-architecture-thumb" data-zoom-src="assets/sre-dashboard.png" data-zoom-title="Centralized Analytics Dashboard 🚧 In Progress" role="button" tabindex="0">
+  Azure using Grafana, OpenTelemetry, CloudWatch, and Azure Monitor to track metrics, logs, traces,
+   alerts, SLOs, and CI/CD performance. It combines app health, infrastructure behavior, 
+   and deployment activity to improve troubleshooting, reliability, and AI-assisted infrastructure operations.</p><div aria-hidden="true" aria-label="Zoom architecture diagram" class="pcard-architecture-thumb" data-zoom-src="assets/sre-dashboard.png" data-zoom-title="Centralized Analytics Dashboard 🚧 In Progress" role="button" tabindex="0">
   <img alt="" src="assets/sre-dashboard.png"/>
 </div>
 <div class="pcard-stack">
@@ -853,12 +834,41 @@ This repository handles a full recovery using two repositories as its source of 
 <a class="btn btn-ghost" href="https://github.com/mohamedkaba4/Centralized-Analytics-Dashboard" onclick="event.stopPropagation();" style="border-color: #a855f7; color: #a855f7;" target="_blank">GitHub</a>
 </div>
 </div>
-<div aria-label="Open finops platform project architecture" class="proj-card" data-cat="cloud" onclick="openProject('finops-platform');" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();openProject('finops-platform');}" role="link" tabindex="0">
+</div>
+<h3 class="proj-section-label">Platform Extensions</h3>
+<div class="proj-grid platform-extensions">
+<details class="proj-card extension-card" data-cat="cloud">
+<summary>
+<div class="pcard-cat">Applications</div>
+<div class="pcard-title">API Powered Weather App<span class="ip-tag">🟢 Production-ready</span></div>
+<p class="extension-intro">S3-hosted frontend with an AWS Lambda and API Gateway backend.</p>
+<span class="extension-toggle"><span class="extension-show">View architecture +</span><span class="extension-hide">Close architecture −</span></span>
+</summary>
+<div class="extension-content">
+<p class="pcard-desc">A hybrid-architecture web application, using a static S3-hosted frontend and a scalable serverless backend. Used AWS Lambda and API Gateway to execute dynamic processing, optimizing infrastructure costs. Strengthened security by migrating sensitive API credentials to protected Lambda Environment Variables.</p>
+<div aria-label="Zoom architecture diagram" class="pcard-architecture-thumb" data-zoom-src="assets/api-weather-app-architecture.png" data-zoom-title="API Powered Weather App 🟢 Production-ready" role="button" tabindex="0">
+<img alt="" src="assets/api-weather-app-architecture.png"/>
+</div>
+<div class="pcard-stack">
+<span class="stack-pill">Apache</span><span class="stack-pill">AWS Lambda</span><span class="stack-pill">API Gateway</span><span class="stack-pill">Python</span>
+</div>
+<div class="pcard-actions">
+<a class="btn" href="https://weather.mavencrest.site" onclick="event.stopPropagation();" target="_blank">Website</a>
+<a class="btn btn-ghost" href="https://github.com/mohamedkaba4/weather" onclick="event.stopPropagation();" style="border-color: #2ac02f; color: #2ac02f;" target="_blank">GitHub</a>
+</div>
+</div>
+</details>
+<details class="proj-card extension-card" data-cat="cloud">
+<summary>
 <div class="pcard-cat">Cloud Infrastructure</div>
 <div class="pcard-title">FinOps Platform <span class="ip-tag">🚧 In Progress</span></div>
-<p>
+<p class="extension-intro">Multi-cloud cost visibility, budgets, optimization, and savings recommendations.</p>
+<span class="extension-toggle"><span class="extension-show">View architecture +</span><span class="extension-hide">Close architecture −</span></span>
+</summary>
+<div class="extension-content">
 <p class="pcard-desc">Cloud cost governance platform providing real-time spend visibility, budget management, reporting, 
-  resource optimization, and savings recommendations across multi-cloud environment.</p><div aria-hidden="true" aria-label="Zoom architecture diagram" class="pcard-architecture-thumb" data-zoom-src="assets/underConstruction.png" data-zoom-title="FinOps Platform 🚧 In Progress" role="button" tabindex="0">
+  resource optimization, and savings recommendations across multi-cloud environment.</p>
+<div aria-label="Zoom architecture diagram" class="pcard-architecture-thumb" data-zoom-src="assets/underConstruction.png" data-zoom-title="FinOps Platform 🚧 In Progress" role="button" tabindex="0">
     <img alt="" src="assets/underConstruction.png"/>
     </div>
 <div class="pcard-stack">
@@ -866,25 +876,74 @@ This repository handles a full recovery using two repositories as its source of 
 </div>
 <div class="pcard-actions">
 <a class="btn" href="https://github.com/mohamedkaba4/FinOpsPlatform" onclick="event.stopPropagation();" target="_blank">GitHub →</a>
-<a class="btn btn-ghost" href="#project-finops-platform" onclick="event.stopPropagation();openProject('finops-platform');return false;" style="border-color:#3B82F6;color:#3B82F6;">Architecture</a>
 </div>
 </div>
-<div aria-label="Open secure infrastructure project architecture" class="proj-card" data-cat="cloud" onclick="openProject('secure-infrastructure');" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();openProject('secure-infrastructure');}" role="link" tabindex="0">
+</details>
+<details class="proj-card extension-card" data-cat="cloud">
+<summary>
+<div class="pcard-cat">Applications</div>
+<div class="pcard-title">WebApp on Lambda Compute<span class="ip-tag">🟢 Production-ready</span></div>
+<p class="extension-intro">Next.js application hosting on AWS Lambda compute.</p>
+<span class="extension-toggle"><span class="extension-show">View architecture +</span><span class="extension-hide">Close architecture −</span></span>
+</summary>
+<div class="extension-content">
+<p class="pcard-desc">Next.js application hosting using AWS Lambda as it's compute engine.</p>
+<div aria-label="Zoom architecture diagram" class="pcard-architecture-thumb" data-zoom-src="assets/lambda-app.png" data-zoom-title="WebApp on Lambda Compute 🟢 Production-ready" role="button" tabindex="0">
+<img alt="" src="assets/lambda-app.png"/>
+</div>
+<div class="pcard-stack">
+<span class="stack-pill">Apache</span><span class="stack-pill">AWS Lambda</span><span class="stack-pill">AWS SSM</span><span class="stack-pill">AWS SDK</span>
+</div>
+<div class="pcard-actions">
+<a class="btn" href="https://weather.mavencrest.site" onclick="event.stopPropagation();" target="_blank">Website</a>
+<a class="btn btn-ghost" href="https://github.com/mohamedkaba4/weather" onclick="event.stopPropagation();" style="border-color: #2ac02f; color: #2ac02f;" target="_blank">GitHub</a>
+</div>
+</div>
+</details>
+<details class="proj-card extension-card" data-cat="cloud">
+<summary>
+<div class="pcard-cat">DRaaS / BaaS</div>
+<div class="pcard-title">Disaster Recovery <span class="ip-tag">🟢 Production-ready</span></div>
+<p class="extension-intro">Automated recovery orchestration for the Mavencrest Azure container platform.</p>
+<span class="extension-toggle"><span class="extension-show">View architecture +</span><span class="extension-hide">Close architecture −</span></span>
+</summary>
+<div class="extension-content">
+<p class="pcard-desc">Disaster recovery orchestration for the Mavencrest Azure container platform.
+This repository handles a full recovery using two repositories as its source of truth:
+ MavencrestAzure — Terraform IaC
+  E-commerce - Application source and Docker images. DR orchestration pipeline runs depending on level of failure detected.</p>
+<div aria-label="Zoom architecture diagram" class="pcard-architecture-thumb" data-zoom-src="assets/disasterrecovery.png" data-zoom-title="Disaster Recovery 🟢 Production-ready" role="button" tabindex="0">
+    <img alt="" src="assets/disasterrecovery.png"/>
+</div>
+<div class="pcard-stack">
+<span class="stack-pill">Azure Site Recovery</span><span class="stack-pill">Azure Backup</span><span class="stack-pill">Recovery Vault</span><span class="stack-pill">Terraform</span>
+</div>
+<div class="pcard-actions">
+<a class="btn" href="https://github.com/mohamedkaba4/Mavencrest-Disaster-Recovery" onclick="event.stopPropagation();" target="_blank">GitHub →</a>
+</div>
+</div>
+</details>
+<details class="proj-card extension-card" data-cat="cloud">
+<summary>
 <div class="pcard-cat">Cloud Infrastructure</div>
 <div class="pcard-title">Mavencrest Security Hub<span class="ip-tag">⏸ On Hold</span></div>
-<p>
+<p class="extension-intro">Cloud and hybrid security focused on identity, least privilege, and network hardening.</p>
+<span class="extension-toggle"><span class="extension-show">View architecture +</span><span class="extension-hide">Close architecture −</span></span>
+</summary>
+<div class="extension-content">
 <p class="pcard-desc">Secure infrastructure across cloud and hybrid environments, focusing on identity-first security, network hardening, 
-  and least-privilege access controls. Focuses on security best practices including IAM governance and continuous monitoring.</p><div aria-hidden="true" aria-label="Zoom architecture diagram" class="pcard-architecture-thumb" data-zoom-src="assets/underConstruction.png" data-zoom-title="Secure Infrastructure ⏸ On Hold" role="button" tabindex="0">
+  and least-privilege access controls. Focuses on security best practices including IAM governance and continuous monitoring.</p>
+<div aria-label="Zoom architecture diagram" class="pcard-architecture-thumb" data-zoom-src="assets/underConstruction.png" data-zoom-title="Secure Infrastructure ⏸ On Hold" role="button" tabindex="0">
     <img alt="" src="assets/underConstruction.png"/>
 </div>
 <div class="pcard-stack">
 <span class="stack-pill">Terraform</span><span class="stack-pill">AWS</span><span class="stack-pill">Control Tower</span><span class="stack-pill">IAM</span><span class="stack-pill">S3</span>
 </div>
 <div class="pcard-actions">
-<a class="btn btn-ghost" href="#project-secure-infrastructure" onclick="event.stopPropagation();openProject('secure-infrastructure');return false;" style="border-color:#3B82F6;color:#3B82F6;">Architecture</a>
 <a class="btn btn-ghost" href="https://github.com/mohamedkaba4/VerySecure" onclick="event.stopPropagation();" style="border-color: #a855f7; color: #a855f7;" target="_blank">GitHub</a>
 </div>
 </div>
+</details>
 </div>
 </div>
 <div class="panel project-detail-panel" id="panel-project-sporting-ecommerce">
@@ -1317,9 +1376,11 @@ This repository handles a full recovery using two repositories as its source of 
 <a class="project-back" href="#projects" onclick="switchTab('projects');return false;">← Back to Projects</a>
 <div class="project-detail-hero">
 <section class="project-detail-card">
-<div class="project-detail-eyebrow">Observability</div>
-<h2 class="project-detail-title">Centralized Analytics Dashboard</h2>
-<p class="project-detail-desc">A centralized telemetry platform designed to ingest infrastructure and application data, process it through a shared pipeline, and visualize health, usage, errors, and operational trends.</p>
+<div class="project-detail-eyebrow">Site Reliability</div>
+<h2 class="project-detail-title">SRE AI-OPS Analytics Dashboard</h2>
+<p class="project-detail-desc">A centralized telemetry platform designed to ingest infrastructure and application data, 
+  process it through a shared pipeline, and visualize health, usage, errors, and 
+  leverage AI-assisted infrastructure operations.</p>
 <span class="project-status">In progress</span>
 <div class="project-detail-stack">
 <span>Grafana</span><span>Telemetry</span><span>Terraform</span><span>AWS</span><span>Monitoring</span>
