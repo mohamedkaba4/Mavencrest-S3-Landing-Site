@@ -633,6 +633,71 @@ body.lightbox-open {
 
   text-shadow: none !important;
 }
+
+/* DISTINCT PROJECT CARDS: spacing, individual boundaries, and balanced layout */
+#panel-projects > .proj-grid {
+  background: transparent;
+  border: 0;
+  padding: 0 2.5rem 3.5rem;
+  gap: 1.6rem;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  align-items: stretch;
+}
+#panel-projects > .proj-grid > .proj-card {
+  min-width: 0;
+  height: 100%;
+  background: #071528;
+  border: 1px solid rgba(0, 255, 231, .23);
+  border-radius: 10px;
+  box-shadow: 0 10px 28px rgba(0, 0, 0, .22);
+  padding: 2.1rem;
+  isolation: isolate;
+  transition: border-color .25s, box-shadow .25s, transform .25s, background .25s;
+}
+#panel-projects > .proj-grid > .proj-card:hover {
+  border-color: var(--pcard-color, var(--cyan));
+  box-shadow: 0 14px 36px rgba(0, 0, 0, .35);
+  transform: translateY(-4px);
+}
+#panel-projects > .proj-grid > .proj-card .pcard-title {
+  min-height: 0;
+  margin-bottom: .95rem;
+}
+#panel-projects > .proj-grid > .proj-card .pcard-desc {
+  min-height: 0;
+  margin-bottom: .5rem;
+  flex: 0 0 auto;
+}
+#panel-projects > .proj-grid > .proj-card .pcard-stack {
+  margin-top: 1.25rem;
+}
+#panel-projects > .proj-grid > .proj-card .pcard-actions {
+  margin-top: auto;
+  padding-top: 1.25rem;
+  flex-wrap: wrap;
+}
+#panel-projects > .proj-grid > .proj-card .pcard-architecture-thumb {
+  margin-top: 1.3rem;
+}
+#panel-projects > .platform-extensions {
+  align-items: start;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  padding-bottom: 6rem;
+}
+#panel-projects > .platform-extensions > .extension-card {
+  height: auto;
+}
+#panel-projects > .platform-extensions > .extension-card .pcard-actions {
+  margin-top: 1.25rem;
+}
+@media (max-width: 800px) {
+  #panel-projects > .proj-grid { grid-template-columns: 1fr; gap: 1.2rem; }
+}
+@media (max-width: 640px) {
+  #panel-projects > .proj-grid { padding-left: 1rem; padding-right: 1rem; }
+  #panel-projects > .proj-grid > .proj-card { padding: 1.5rem; }
+}
+
 </style>
 </head>
 <body>
@@ -755,40 +820,26 @@ body.lightbox-open {
 <h3 class="proj-section-label">Featured Projects</h3>
 <div class="proj-grid">
 
-<div aria-label="Open aws enterprise migration project architecture" class="proj-card" data-cat="cloud" onclick="openProject('aws-enterprise-migration');" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();openProject('aws-enterprise-migration');}" role="link" tabindex="0">
-<div class="pcard-cat">Cloud Infrastructure</div>
-<div class="pcard-title">AWS Enterprise Migration<span class="ip-tag">🟢 Production-ready</span></div>
-<p>
-<p class="pcard-desc">Migration of a Sporting E-commerce Platform to AWS, mapping workloads to cloud-native services for performance, scalability, and reliability. Backed by Amazon EC2, Auto-scaling, Neon PostgreSQL DB. CI/CD pipeline is configred with Github Actions, new deployments build isoloted AMI artifacts. Infrastructure is deployed and mangaged by Terraform IaC. </p><div aria-hidden="true" aria-label="Zoom architecture diagram" class="pcard-architecture-thumb" data-zoom-src="assets/aws-enterprise-migration-architecture-dark.png" data-zoom-title="AWS Enterprise Migration 🟢 Production-ready" role="button" tabindex="0">
-<img alt="" src="assets/aws-enterprise-migration-architecture-dark.png"/>
+<div aria-label="Open analytics dashboard project architecture" class="proj-card" data-cat="cloud" onclick="openProject('analytics-dashboard');" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();openProject('analytics-dashboard');}" role="link" tabindex="0">
+<div class="pcard-cat">Site Reliability</div>
+<div class="pcard-title">On-Prem Kubernetes Platform.<span class="ip-tag">🟢 Production-ready</span></div>
+<p class="pcard-desc">A self-managed, on-premises Kubernetes platform hosting the Mavencrest application with 
+  GitOps delivery, secure access through Cloudflare Tunnel, and centralized monitoring and alerting. 
+  The platform combines application hosting, cluster administration, and infrastructure automation, 
+  with planned AIOps capabilities for alert investigation, troubleshooting, and remediation recommendations.</p><div aria-hidden="true" aria-label="Zoom architecture diagram" class="pcard-architecture-thumb" data-zoom-src="assets/sre-dashboard.png" data-zoom-title="Centralized Analytics Dashboard 🚧 In Progress" role="button" tabindex="0">
+<img alt="" src="assets/sre-dashboard.png"/>
 </div>
 <div class="pcard-stack">
 <span class="stack-pill">Terraform</span><span class="stack-pill">AWS</span><span class="stack-pill">Control Tower</span><span class="stack-pill">IAM</span><span class="stack-pill">S3</span>
 </div>
 <div class="pcard-actions">
-<a class="btn btn-ghost" href="#project-aws-enterprise-migration" onclick="event.stopPropagation();openProject('aws-enterprise-migration');return false;" style="border-color:#3B82F6;color:#3B82F6;">Architecture</a>
-<a class="btn btn-ghost" href="https://github.com/mohamedkaba4/AWSMigration" onclick="event.stopPropagation();" style="border-color: #a855f7; color: #a855f7;" target="_blank">GitHub</a>
+<a class="btn btn-ghost" href="#project-analytics-dashboard" onclick="event.stopPropagation();openProject('analytics-dashboard');return false;" style="border-color:#3B82F6;color:#3B82F6;">Architecture</a>
+<a class="btn btn-ghost" href="https://github.com/mohamedkaba4/Centralized-Analytics-Dashboard" onclick="event.stopPropagation();" style="border-color: #a855f7; color: #a855f7;" target="_blank">GitHub</a>
 </div>
-</p></div>
-<div aria-label="Open azure migration project architecture" class="proj-card" data-cat="homelab" onclick="openProject('azure-migration');" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();openProject('azure-migration');}" role="link" tabindex="0">
-<div class="pcard-cat">Cloud Infrastructure</div>
-<div class="pcard-title">Azure Migration Solution<span class="ip-tag">🟢 Production-ready</span></div>
-<p>
-<p class="pcard-desc">Sporting E-commerce Platform migration to Azure using a containerized architecture. Terraform provisions the infrastructure, while Azure DevOps CI/CD builds, pushes, and deploys container images through Azure Container Registry to Azure Container Apps. 
-   Scalability, security, monitoring, and high availability built into the design.</p><div aria-hidden="true" aria-label="Zoom architecture diagram" class="pcard-architecture-thumb" data-zoom-src="assets/azure-migration-solution-architecture-dark.png" data-zoom-title="Azure Migration Solution 🟢 Production-ready" role="button" tabindex="0">
-<img alt="" src="assets/azure-migration-solution-architecture-dark.png"/>
 </div>
-<div class="pcard-stack">
-<span class="stack-pill">Proxmox</span><span class="stack-pill">Wazuh</span><span class="stack-pill">Graylog</span><span class="stack-pill">Zeek</span><span class="stack-pill">Linux</span>
-</div>
-<div class="pcard-actions">
-<a class="btn btn-ghost" href="#project-azure-migration" onclick="event.stopPropagation();openProject('azure-migration');return false;" style="border-color:#3B82F6;color:#3B82F6;">Architecture</a>
-<a class="btn btn-ghost" href="https://github.com/mohamedkaba4/AzureMigration" onclick="event.stopPropagation();" style="border-color: #a855f7; color: #a855f7;" target="_blank">GitHub</a>
-</div>
-</p></div>
 <article class="proj-card enterprise-landing-zones" data-cat="cloud">
 <div class="pcard-cat">Cloud Infrastructure</div>
-<div class="pcard-title">Enterprise Landing Zones (AZ and AWS)<span class="ip-tag">🚧 In Progress</span></div>
+<div class="pcard-title">Enterprise Landing Zones (AZ and AWS)<span class="ip-tag">🟢 Production-ready</span></div>
 <p class="pcard-desc">Secure cloud foundations across Azure and AWS, provisioned with Terraform. AWS uses Control Tower, multi-account governance, Service Control Policies, and IAM controls. Azure uses management groups, Azure Policy, role-based access control, and identity governance.</p>
 <div class="landing-zone-diagrams">
 <div><div class="landing-zone-label">AWS Landing Zone</div><div aria-label="Zoom architecture diagram" class="pcard-architecture-thumb" data-zoom-src="assets/awslandingzone.png" data-zoom-title="Multi-Region AWS Landing Zone 🚧 In Progress" role="button" tabindex="0">
@@ -806,54 +857,48 @@ body.lightbox-open {
 <a class="btn btn-ghost" href="#project-azure-landing-zone" onclick="openProject('azure-landing-zone');return false;">Azure Project →</a>
 </div>
 </article>
-<div aria-label="Open kubernetes dockingstation project architecture" class="proj-card" data-cat="cloud" onclick="openProject('kubernetes-dockingstation');" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();openProject('kubernetes-dockingstation');}" role="link" tabindex="0">
-<div class="pcard-cat">K8 DockingStation</div>
-<div class="pcard-title">Bank of Anthos on Kubernetes <span class="ip-tag">🚧 In Progress</span></div>
-<p class="pcard-desc">A Kubernetes deployment of a open source project "Bank of Anthos" featuring horizontal pod autoscaling, 
-  rolling updates, service discovery.</p><div aria-hidden="true" aria-label="Zoom architecture diagram" class="pcard-architecture-thumb" data-zoom-src="assets/underConstruction.png" data-zoom-title="Kubernetes DockingStation 🚧 In Progress" role="button" tabindex="0">
-<img alt="" src="assets/underConstruction.png"/>
-</div>
-<div class="pcard-stack">
-<span class="stack-pill">Apache</span><span class="stack-pill">Docker</span><span class="stack-pill">Docker Compose</span><span class="stack-pill">Linux</span>
-</div>
-<div class="pcard-actions">
-<a class="btn btn-ghost" href="#project-kubernetes-dockingstation" onclick="event.stopPropagation();openProject('kubernetes-dockingstation');return false;" style="border-color:#3B82F6;color:#3B82F6;">Architecture</a>
-<a class="btn" href="https://github.com/mohamedkaba4/Kubernetes-DockingStation" onclick="event.stopPropagation();" target="_blank">GitHub →</a>
-</div>
-</div>
-<div aria-label="Open analytics dashboard project architecture" class="proj-card" data-cat="cloud" onclick="openProject('analytics-dashboard');" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();openProject('analytics-dashboard');}" role="link" tabindex="0">
-<div class="pcard-cat">Site Reliability</div>
-<div class="pcard-title">Observability AI-OPS Dashboard <span class="ip-tag">🚧 In Progress</span></div>
-<p>
-<p class="pcard-desc">A centralized observability and engineering analytics platform across AWS and 
-  Azure using Grafana, OpenTelemetry, CloudWatch, and Azure Monitor to track metrics, logs, traces,
-   alerts, SLOs, and CI/CD performance. It combines app health, infrastructure behavior, 
-   and deployment activity to improve troubleshooting, reliability, and AI-assisted infrastructure operations.</p><div aria-hidden="true" aria-label="Zoom architecture diagram" class="pcard-architecture-thumb" data-zoom-src="assets/sre-dashboard.png" data-zoom-title="Centralized Analytics Dashboard 🚧 In Progress" role="button" tabindex="0">
-<img alt="" src="assets/sre-dashboard.png"/>
+<div aria-label="Open aws enterprise migration project architecture" class="proj-card" data-cat="cloud" onclick="openProject('aws-enterprise-migration');" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();openProject('aws-enterprise-migration');}" role="link" tabindex="0">
+<div class="pcard-cat">Cloud Infrastructure</div>
+<div class="pcard-title">AWS Enterprise Migration<span class="ip-tag">🟢 Production-ready</span></div>
+<p class="pcard-desc">Migration of a Sporting E-commerce Platform to AWS, mapping workloads to cloud-native services for performance, scalability, and reliability. Backed by Amazon EC2, Auto-scaling, Neon PostgreSQL DB. CI/CD pipeline is configred with Github Actions, new deployments build isoloted AMI artifacts. Infrastructure is deployed and mangaged by Terraform IaC. </p><div aria-hidden="true" aria-label="Zoom architecture diagram" class="pcard-architecture-thumb" data-zoom-src="assets/aws-enterprise-migration-architecture-dark.png" data-zoom-title="AWS Enterprise Migration 🟢 Production-ready" role="button" tabindex="0">
+<img alt="" src="assets/aws-enterprise-migration-architecture-dark.png"/>
 </div>
 <div class="pcard-stack">
 <span class="stack-pill">Terraform</span><span class="stack-pill">AWS</span><span class="stack-pill">Control Tower</span><span class="stack-pill">IAM</span><span class="stack-pill">S3</span>
 </div>
 <div class="pcard-actions">
-<a class="btn btn-ghost" href="#project-analytics-dashboard" onclick="event.stopPropagation();openProject('analytics-dashboard');return false;" style="border-color:#3B82F6;color:#3B82F6;">Architecture</a>
-<a class="btn btn-ghost" href="https://github.com/mohamedkaba4/Centralized-Analytics-Dashboard" onclick="event.stopPropagation();" style="border-color: #a855f7; color: #a855f7;" target="_blank">GitHub</a>
+<a class="btn btn-ghost" href="#project-aws-enterprise-migration" onclick="event.stopPropagation();openProject('aws-enterprise-migration');return false;" style="border-color:#3B82F6;color:#3B82F6;">Architecture</a>
+<a class="btn btn-ghost" href="https://github.com/mohamedkaba4/AWSMigration" onclick="event.stopPropagation();" style="border-color: #a855f7; color: #a855f7;" target="_blank">GitHub</a>
 </div>
-</p></div>
+</div>
+<div aria-label="Open azure migration project architecture" class="proj-card" data-cat="homelab" onclick="openProject('azure-migration');" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();openProject('azure-migration');}" role="link" tabindex="0">
+<div class="pcard-cat">Cloud Infrastructure</div>
+<div class="pcard-title">Azure Migration Solution<span class="ip-tag">🟢 Production-ready</span></div>
+<p class="pcard-desc">Sporting E-commerce Platform migration to Azure using a containerized architecture. Terraform provisions the infrastructure, while Azure DevOps CI/CD builds, pushes, and deploys container images through Azure Container Registry to Azure Container Apps. 
+   Scalability, security, monitoring, and high availability built into the design.</p><div aria-hidden="true" aria-label="Zoom architecture diagram" class="pcard-architecture-thumb" data-zoom-src="assets/azure-migration-solution-architecture-dark.png" data-zoom-title="Azure Migration Solution 🟢 Production-ready" role="button" tabindex="0">
+<img alt="" src="assets/azure-migration-solution-architecture-dark.png"/>
+</div>
+<div class="pcard-stack">
+<span class="stack-pill">Proxmox</span><span class="stack-pill">Wazuh</span><span class="stack-pill">Graylog</span><span class="stack-pill">Zeek</span><span class="stack-pill">Linux</span>
+</div>
+<div class="pcard-actions">
+<a class="btn btn-ghost" href="#project-azure-migration" onclick="event.stopPropagation();openProject('azure-migration');return false;" style="border-color:#3B82F6;color:#3B82F6;">Architecture</a>
+<a class="btn btn-ghost" href="https://github.com/mohamedkaba4/AzureMigration" onclick="event.stopPropagation();" style="border-color: #a855f7; color: #a855f7;" target="_blank">GitHub</a>
+</div>
+</div>
 <div class="proj-card" data-cat="homelab">
 <div class="pcard-cat">Platform Engineering</div>
-<div class="pcard-title">Kubernetes Infrastructure Platform <span class="ip-tag">🚧 In Progress</span></div>
-<p class="pcard-desc">Self-managed Kubernetes infrastructure on on-premises virtual machines following migration from Azure Kubernetes Service (AKS). Hosts the Mavencrest storefront and admin workloads, with a focus on cluster administration, networking, orchestration, and platform operations.</p>
-<div aria-hidden="true" aria-label="Kubernetes infrastructure architecture placeholder" class="pcard-architecture-thumb" data-zoom-src="assets/underConstruction.png" data-zoom-title="Kubernetes Infrastructure Platform 🚧 In Progress" role="button" tabindex="0"><img alt="Kubernetes infrastructure architecture coming soon" src="assets/underConstruction.png"/></div>
+<div class="pcard-title">AKS Microservices Platform<span class="ip-tag">🚧 In Progress</span></div>
+<p class="pcard-desc">An Azure Kubernetes Service (AKS) platform hosting Bank of Anthos microservices, 
+  provisioned with Terraform and deployed through Argo CD. The platform integrates Grafana,
+ Prometheus, Loki, and Tempo for metrics, logs, traces, and alerting, combining Azure networking,
+    workload identity, and centralized observability to support reliable microservices operations and troubleshooting.</p>
+<div aria-hidden="true" aria-label="Kubernetes infrastructure architecture placeholder" class="pcard-architecture-thumb" data-zoom-src="assets/underConstruction.png" data-zoom-title="Kubernetes Infrastructure Platform 🚧 In Progress" 
+role="button" tabindex="0"><img alt="Kubernetes infrastructure architecture coming soon" src="assets/underConstruction.png"/></div>
 <div class="pcard-stack"><span class="stack-pill">Kubernetes</span><span class="stack-pill">Linux VMs</span><span class="stack-pill">AKS Migration</span><span class="stack-pill">On-Premises</span><span class="stack-pill">Docker</span></div>
-<div class="pcard-actions"><span class="btn btn-ghost" style="pointer-events:none;opacity:.65;">Architecture Coming Soon</span></div>
-</div><div aria-label="Open finops platform project architecture" class="proj-card" data-cat="cloud" onclick="openProject('finops-platform');" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();openProject('finops-platform');}" role="link" tabindex="0"><div class="pcard-cat">Cloud Infrastructure</div><div class="pcard-title">FinOps Platform <span class="ip-tag">🚧 In Progress</span></div><p class="pcard-desc">Cloud cost governance platform providing real-time spend visibility, budget management, reporting, 
-  resource optimization, and savings recommendations across multi-cloud environment.</p><div aria-label="Zoom architecture diagram" class="pcard-architecture-thumb" data-zoom-src="assets/underConstruction.png" data-zoom-title="FinOps Platform 🚧 In Progress" role="button" tabindex="0">
-<img alt="" src="assets/underConstruction.png"/>
-</div><div class="pcard-stack">
-<span class="stack-pill">Azure</span><span class="stack-pill">AWS</span><span class="stack-pill">Power BI</span><span class="stack-pill">Terraform</span><span class="stack-pill">FinOps</span>
-</div><div class="pcard-actions"><a class="btn btn-ghost" href="#project-finops-platform" onclick="event.stopPropagation();openProject('finops-platform');return false;" style="border-color:#3B82F6;color:#3B82F6;">Architecture</a>
-<a class="btn" href="https://github.com/mohamedkaba4/FinOpsPlatform" onclick="event.stopPropagation();" target="_blank">GitHub →</a>
-</div></div><div aria-label="Open disaster recovery project architecture" class="proj-card" data-cat="cloud" onclick="openProject('disaster-recovery');" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();openProject('disaster-recovery');}" role="link" tabindex="0"><div class="pcard-cat">DRaaS / BaaS</div><div class="pcard-title">Disaster Recovery <span class="ip-tag">🟢 Production-ready</span></div><p class="pcard-desc">Disaster recovery orchestration for the Mavencrest Azure container platform.
+<div class="pcard-actions"><span class="btn btn-ghost" style="pointer-events:none;opacity:.65;">Architecture Coming Soon</span>
+</div>
+</div><div aria-label="Open disaster recovery project architecture" class="proj-card" data-cat="cloud" onclick="openProject('disaster-recovery');" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();openProject('disaster-recovery');}" role="link" tabindex="0"><div class="pcard-cat">DRaaS / BaaS</div><div class="pcard-title">Disaster Recovery <span class="ip-tag">🟢 Production-ready</span></div><p class="pcard-desc">Disaster recovery orchestration for the Mavencrest Azure container platform.
 This repository handles a full recovery using two repositories as its source of truth:
  MavencrestAzure — Terraform IaC
   E-commerce - Application source and Docker images. DR orchestration pipeline runs depending on level of failure detected.</p><div aria-label="Zoom architecture diagram" class="pcard-architecture-thumb" data-zoom-src="assets/disasterrecovery.png" data-zoom-title="Disaster Recovery 🟢 Production-ready" role="button" tabindex="0">
@@ -862,6 +907,17 @@ This repository handles a full recovery using two repositories as its source of 
 <span class="stack-pill">Azure Site Recovery</span><span class="stack-pill">Azure Backup</span><span class="stack-pill">Recovery Vault</span><span class="stack-pill">Terraform</span>
 </div><div class="pcard-actions"><a class="btn btn-ghost" href="#project-disaster-recovery" onclick="event.stopPropagation();openProject('disaster-recovery');return false;" style="border-color:#3B82F6;color:#3B82F6;">Architecture</a>
 <a class="btn" href="https://github.com/mohamedkaba4/Mavencrest-Disaster-Recovery" onclick="event.stopPropagation();" target="_blank">GitHub →</a>
+</div></div>
+<div aria-label="Open finops platform project architecture" class="proj-card" data-cat="cloud" onclick="openProject('finops-platform');" 
+onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();openProject('finops-platform');}" role="link" tabindex="0">
+<div class="pcard-cat">Cloud Infrastructure</div><div class="pcard-title">FinOps Platform <span class="ip-tag">🚧 In Progress</span></div><p 
+class="pcard-desc">Cloud cost governance platform providing real-time spend visibility, budget management, reporting, 
+  resource optimization, and savings recommendations across multi-cloud environment.</p><div aria-label="Zoom architecture diagram" class="pcard-architecture-thumb" data-zoom-src="assets/underConstruction.png" data-zoom-title="FinOps Platform 🚧 In Progress" role="button" tabindex="0">
+<img alt="" src="assets/underConstruction.png"/>
+</div><div class="pcard-stack">
+<span class="stack-pill">Azure</span><span class="stack-pill">AWS</span><span class="stack-pill">Power BI</span><span class="stack-pill">Terraform</span><span class="stack-pill">FinOps</span>
+</div><div class="pcard-actions"><a class="btn btn-ghost" href="#project-finops-platform" onclick="event.stopPropagation();openProject('finops-platform');return false;" style="border-color:#3B82F6;color:#3B82F6;">Architecture</a>
+<a class="btn" href="https://github.com/mohamedkaba4/FinOpsPlatform" onclick="event.stopPropagation();" target="_blank">GitHub →</a>
 </div></div></div>
 <h3 class="proj-section-label">Platform Extensions</h3>
 <div class="proj-grid platform-extensions"><details class="proj-card extension-card" data-cat="homelab"><summary><div class="pcard-cat">Applications</div><div class="pcard-title">Sporting E-commerce App<span class="ip-tag">🟢 Production-ready</span></div><p class="extension-intro">Next.js storefront and admin applications backed by PostgreSQL and Prisma.</p><span class="extension-toggle"><span class="extension-show">View architecture +</span><span class="extension-hide">Close architecture −</span></span></summary><div class="extension-content"><p class="pcard-desc">An sporting goods e-commerce platform showcasing an enterprise-grade infrastructure and modern cloud architecture. Focuses on scalability, observability, containerized deployments, disaster recovery, 
@@ -1028,62 +1084,6 @@ This repository handles a full recovery using two repositories as its source of 
 <span>Review source code, infrastructure code, and version history.</span>
 </a>
 <a class="resource-card" href="https://github.com/mohamedkaba4/Weather#readme" rel="noopener" target="_blank">
-<small>Documentation</small>
-<strong>Technical documentation</strong>
-<span>Read deployment notes, design decisions, and usage details.</span>
-</a>
-</div>
-</section>
-<section class="detail-notes">
-<article class="detail-note">
-<h3>Architecture</h3>
-<p>The diagram summarizes the primary traffic flow, application components, security controls, automation, and data services used by the project.</p>
-</article>
-<article class="detail-note">
-<h3>Engineering Focus</h3>
-<p>This project is presented as an engineering case study focused on reliability, scalability, security, repeatability, and operational clarity.</p>
-</article>
-<article class="detail-note">
-<h3>Documentation Roadmap</h3>
-<p>Add implementation screenshots, Terraform plans, deployment output, monitoring views, design trade-offs, and lessons learned as the project progresses.</p>
-</article>
-</section>
-</div>
-</div>
-<div class="panel project-detail-panel" id="panel-project-kubernetes-dockingstation">
-<div class="project-detail-wrap">
-<a class="project-back" href="#projects" onclick="switchTab('projects');return false;">← Back to Projects</a>
-<div class="project-detail-hero">
-<section class="project-detail-card">
-<div class="project-detail-eyebrow">Containers</div>
-<h2 class="project-detail-title">Kubernetes DockingStation</h2>
-<p class="project-detail-desc">A Kubernetes deployment of a containerized e-commerce workload demonstrating ingress routing, service discovery, rolling updates, horizontal pod autoscaling, and high availability.</p>
-<span class="project-status">In progress</span>
-<div class="project-detail-stack">
-<span>Kubernetes</span><span>Docker</span><span>Ingress</span><span>HPA</span><span>Linux</span>
-</div>
-</section>
-<section class="project-detail-card">
-<div class="arch-heading">Architecture Diagram</div>
-<div aria-label="Kubernetes DockingStation architecture" class="arch-box" role="img">
-<div class="arch-flow"><div class="arch-node"><strong>Users</strong><span>Application traffic</span></div><div class="arch-arrow">→</div><div class="arch-node"><strong>Ingress</strong><span>Host and path routing</span></div><div class="arch-arrow">→</div><div class="arch-node"><strong>Service</strong><span>Stable application endpoint</span></div><div class="arch-arrow">→</div><div class="arch-node"><strong>Application Pods</strong><span>Replicated containers</span></div><div class="arch-arrow">→</div><div class="arch-node"><strong>Horizontal Pod Autoscaler</strong><span>Replica scaling</span></div><div class="arch-arrow">→</div><div class="arch-node"><strong>Config / Secrets</strong><span>Runtime configuration</span></div><div class="arch-arrow">→</div><div class="arch-node"><strong>Persistent Data</strong><span>Database tier</span></div></div>
-</div>
-</section>
-</div>
-<section class="detail-section">
-<div class="detail-section-heading">Demo / Documentation</div>
-<div class="resource-grid">
-<a class="resource-card" href="https://docker.mavencrest.site" rel="noopener" target="_blank">
-<small>Demo</small>
-<strong>Open live environment</strong>
-<span>Visit the deployed application or public endpoint.</span>
-</a>
-<a class="resource-card" href="https://github.com/mohamedkaba4/Kubernetes-DockingStation" rel="noopener" target="_blank">
-<small>Source</small>
-<strong>GitHub repository</strong>
-<span>Review source code, infrastructure code, and version history.</span>
-</a>
-<a class="resource-card" href="https://github.com/mohamedkaba4/Kubernetes-DockingStation#readme" rel="noopener" target="_blank">
 <small>Documentation</small>
 <strong>Technical documentation</strong>
 <span>Read deployment notes, design decisions, and usage details.</span>
@@ -1674,7 +1674,7 @@ This repository handles a full recovery using two repositories as its source of 
 </div>
 </div>
 <script>
-const PROJECT_IDS = ["sporting-ecommerce", "weather-app", "kubernetes-dockingstation", "aws-landing-zone", "secure-infrastructure", "container-devsecops", "aws-enterprise-migration", "azure-migration", "analytics-dashboard", "finops-platform", "disaster-recovery", "azure-landing-zone"];
+const PROJECT_IDS = ["sporting-ecommerce", "weather-app", "aws-landing-zone", "secure-infrastructure", "container-devsecops", "aws-enterprise-migration", "azure-migration", "analytics-dashboard", "finops-platform", "disaster-recovery", "azure-landing-zone"];
 const MAIN_TABS = ['home', 'projects', 'certifications', 'contact'];
 let navScrollLock = false;
 let navScrollTimer = 0;
