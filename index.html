@@ -115,6 +115,7 @@ nav { position: fixed; top: 0; left: 0; right: 0; z-index: 200; height: 52px; di
 .hero-meta { font-size: 0.75rem; color: var(--cyan); letter-spacing: 0.3em; text-transform: uppercase; margin-bottom: 2rem; text-shadow: 0 0 10px rgba(0, 255, 231, 0.2); }
 .hero-meta::before { content: '> '; }
 
+
 .hero-name { 
   font-family: var(--mono);            
   font-weight: 700;                    
@@ -619,6 +620,19 @@ body.lightbox-open {
 .enterprise-landing-zones .pcard-actions { flex-wrap: wrap; }
 @media (max-width: 480px) { .landing-zone-diagrams { grid-template-columns: 1fr; } }
 
+.hero-name span,
+.hero-name .line2 {
+  font-family: inherit !important;
+  font-weight: 900 !important;
+  letter-spacing: 0.12em !important;
+  text-transform: uppercase;
+
+  color: #8fb4ce !important;
+  -webkit-text-fill-color: #8fb4ce !important;
+  -webkit-text-stroke: 1px #00f5e9 !important;
+
+  text-shadow: none !important;
+}
 </style>
 </head>
 <body>
@@ -647,7 +661,10 @@ body.lightbox-open {
 <div class="panel main-panel active visible" id="panel-home">
 <section class="hero">
 <div class="hero-meta">Portfolio for Cloud, Kubernetes, &amp; DevOps Engineering</div>
-<h1 class="hero-name"><span>Mohamed</span><span class="line2">Kaba</span></h1>
+<h1 class="hero-name">
+  <span class="line2">Mohamed</span>
+  <span class="line2">Kaba</span>
+</h1>
 <p class="hero-subtitle">Infrastructure · Cloud Architecture · Zero-Trust Security</p>
 <div class="hero-badges">
 <span class="badge">AWS Certified</span>
