@@ -24,6 +24,8 @@ CloudFront
   |
   v
 Route 53 + HTTPS
+
+(Google Analytics is used for traffic insight)
 ```
 
 CloudFront is the public entry point and serves cached content globally. The S3 bucket remains private and is accessed only through Origin Access Control (OAC).
