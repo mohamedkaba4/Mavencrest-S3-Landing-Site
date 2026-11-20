@@ -1,7 +1,7 @@
 # Mavencrest Static Site
 
 Personal cloud and Infrastructure engineering portfolio hosted on AWS using Amazon S3 and CloudFront. The site uses a lightweight static frontend (S3) for fast, reliable global delivery, with a GitHub Actions CI/CD pipeline that allows quick production updates directly from local dev through a simple Git push.
-
+live site: https://mavencrest.site
 ## Architecture
 
 ```text
